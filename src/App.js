@@ -20,7 +20,7 @@ const Inputs = () => {
   };
   return (
     <>
-      <article className="booklist">
+      <article className="login">
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-control">
             <h1>Sign In</h1>

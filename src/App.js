@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import "./img/background.png";
+import register from "./components/register";
 
-function App() {
+const Inputs = () => {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password && email) {
+      //const person = { id: new Date().getTime().toString(), password, email };
+      console.log(password, email);
+      setPassword("");
+      setEmail("");
+    } else {
+      console.log("empty values");
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <article className="booklist">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="form-control">
+            <h1>Sign In</h1>
+            <input
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-control">
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              validate
+            />
+          </div>
+          <button type="submit" className="buttonContainer">
+            Login
+          </button>
+          <button type="submit" className="buttonContainer">
+            Register
+          </button>
+          <button type="submit" className="buttonContainer">
+            Forgot password?
+          </button>
+        </form>
+      </article>
+    </>
   );
-}
+};
 
-export default App;
+export default Inputs;

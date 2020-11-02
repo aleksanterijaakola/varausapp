@@ -1,0 +1,6 @@
+- [ ] Code is seld-documenting and easy to understand
+- [ ] There is no commented out code
+- [ ] There is no unnecessary logging or debugging code
+- [ ] Errors are handled
+- [ ] Naming of methods, variables, and classes is proper
+- [ ] Changes are documented

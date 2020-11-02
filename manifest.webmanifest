@@ -1,0 +1,10 @@
+{
+    "name": "Booking app",
+    "short_name": "Placeholder short name",
+    "theme_color": "#2196f3",
+    "background_color": "#2196f3",
+    "display": "browser",
+    "orientation": "portrait",
+    "scope": "/app",
+    "start_url": "/"
+  }

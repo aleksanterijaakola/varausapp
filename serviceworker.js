@@ -1,6 +1,6 @@
 // Perform install steps
 let CACHE_NAME = "my-cache";
-let urlsToCache = ["css/style.css", "images/myIcon.png", "scripts/index.js"];
+let urlsToCache = ["css/style.css", "images/myIcon.png"];
 
 self.addEventListener("install", function (event) {
   // Perform install steps

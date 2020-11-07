@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import '../App.css';
-import history from '../services/history'
 
 
 const Login = () => {
@@ -47,7 +46,7 @@ const Login = () => {
           <button type="submit" className="buttonContainer">
             Login
           </button>
-          <button type="submit" className="buttonContainer" >
+          <button type="submit" className="buttonContainer">
             Register
           </button>
           <button type="submit" className="buttonContainer">

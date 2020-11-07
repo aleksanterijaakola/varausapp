@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import '../App.css'
 import ReactFormInputValidation from 'react-form-input-validation'
+import '../App.css'
 
 class Register extends Component {
   constructor (props) {
@@ -30,40 +30,43 @@ class Register extends Component {
     return (<React.Fragment>
       <h1>Registration</h1>
       <form onSubmit={this.form.handleSubmit}>
-            <p>
-              <label>
+        <p>
+          <label>
 
-                <input type="email"
-                       value={this.state.fields.email}
-                       onBlur={this.form.handleBlurEvent}
-                       onChange={this.form.handleChangeEvent}
-                       name="email"
-                       placeholder="Email"/>
+            <input type="email"
+                   value={this.state.fields.email}
+                   onBlur={this.form.handleBlurEvent}
+                   onChange={this.form.handleChangeEvent}
+                   name="email"
+                   placeholder="Email"/>
 
-              </label>
-              <label className="error">
-                {this.state.errors.email ? this.state.errors.email : ''}
-              </label>
-            </p>
+          </label>
+          <label className="error">
+            {this.state.errors.email ? this.state.errors.email : ''}
+          </label>
+        </p>
 
-            <p>
-              <label>
-                <input type="password"
-                       value={this.state.fields.password}
-                       onChange={this.form.handleChangeEvent}
-                       onBlur={this.form.handleBlurEvent}
-                       name="password"
-                       placeholder={'password'}/>
-              </label>
-              <label className="error">
-                {this.state.errors.password ? this.state.errors.password : ''}
-              </label>
-            </p>
+        <p>
+          <label>
+            <input type="password"
+                   value={this.state.fields.password}
+                   onChange={this.form.handleChangeEvent}
+                   onBlur={this.form.handleBlurEvent}
+                   name="password"
+                   placeholder={'password'}/>
+          </label>
+          <label className="error">
+            {this.state.errors.password ? this.state.errors.password : ''}
+          </label>
+        </p>
 
-            <p>
-              <button type="Submit">Sign Up!</button>
-            </p>
+        <p>
+          <button type="Submit">Sign Up!</button>
+        </p>
       </form>
+      <button onClick={()=>this.props.history.push('/login')}>
+        Back to Login
+      </button>
     </React.Fragment>)
   }
 }

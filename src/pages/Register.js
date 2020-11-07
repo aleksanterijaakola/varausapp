@@ -14,6 +14,7 @@ class Register extends Component {
   register = e => {
     console.log(this.state)
     e.preventDefault();
+    this.props.history.push('/login');
   }
 
   handleChange = e => {

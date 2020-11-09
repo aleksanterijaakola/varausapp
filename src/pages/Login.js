@@ -23,8 +23,10 @@ const Login = () => {
   return (
     <>
       <article className="login">
-        <img src={thefirmalogo} alt="thefirmalogo" width="310px"></img>
+      <div className="header">
+        <img src={thefirmalogo} alt="thefirmalogo" className="header-img" />
         <h1>Booking Computer App</h1>
+      </div>
         <form className="form" onSubmit={handleSubmit}>
         <h2>Login</h2>
           <div className="form-control">
@@ -55,15 +57,16 @@ const Login = () => {
             <button type="submit">
               REGISTER
           </button>
+          </div>
           <div className="button-container-forgot">
           <button type="submit" className="forgot-button">
               FORGOT PASSWORD ?
           </button>
           </div>
-
-          </div>
         </form>
-        <img src={turkuamklogo} alt="turkuamklogo" width="200px"></img>
+        <div className="footer">
+          <div src={turkuamklogo} alt="turkuamklogo" className="footer-img" />
+        </div>
       </article>
     </>
   );

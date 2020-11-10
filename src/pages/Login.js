@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import '../App.css';
-
+import "../App.css";
+import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,8 +47,8 @@ const Login = () => {
           <button type="submit" className="buttonContainer">
             Login
           </button>
-          <button type="submit" className="buttonContainer">
-            Register
+          <button>
+            <Link to="/registration">Register</Link>
           </button>
           <button type="submit" className="buttonContainer">
             Forgot password?

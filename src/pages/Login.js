@@ -47,8 +47,8 @@ const Login = () => {
           <button type="submit" className="buttonContainer">
             Login
           </button>
-          <button>
-            <Link to="/registration">Register</Link>
+          <button onClick={() => history.push("/register")}>
+            Register
           </button>
           <button type="submit" className="buttonContainer">
             Forgot password?

@@ -49,7 +49,12 @@ const Login = () => {
           <button type="submit" className="buttonContainer" >
             Login
           </button>
-
+          <button onClick={() => history.push("/register")}>
+            Register
+          </button>
+          <button type="submit" className="buttonContainer">
+            Forgot password?
+          </button>
         </form>
         <button onClick={()=> history.push('/registration')}>
           Register

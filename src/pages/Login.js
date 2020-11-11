@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import "../App.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import '../App.css';
 
 const Login = () => {
+
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const history = useHistory();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +46,7 @@ const Login = () => {
               validate
             />
           </div>
-          <button type="submit" className="buttonContainer">
+          <button type="submit" className="buttonContainer" >
             Login
           </button>
           <button onClick={() => history.push("/register")}>
@@ -54,7 +56,14 @@ const Login = () => {
             Forgot password?
           </button>
         </form>
+        <button onClick={()=> history.push('/registration')}>
+          Register
+        </button>
+        <button >
+          Forgot password?
+        </button>
       </article>
+
     </>
   );
 };

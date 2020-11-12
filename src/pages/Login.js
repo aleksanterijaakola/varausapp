@@ -22,51 +22,43 @@ const Login = () => {
   };
   return (
     <>
-      <article className="login">
-      <div className="header">
-        <img src={thefirmalogo} alt="thefirmalogo" className="header-img" />
-        <h1>Booking Computer App</h1>
-      </div>
-        <form className="form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
-          <div className="form-control">
-            <input
-              type="text"
-              id="email"
-              placeholder="E-MAIL"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-control">
-            <input
-              type="password"
-              id="password"
-              placeholder="PASSWORD"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              validate
-            />
-          </div>
-          <div className="button-container">
-            <button type="submit">
-              LOGIN
+      <article class="text-center">
+        <form class="form-signin" onSubmit={handleSubmit}>
+          <img src={thefirmalogo} alt className="mb-1" height="70px" />
+          <h1 class="h4 mb-5 font-weight-normal text-white">Booking Computer App</h1>
+          <h2 class="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
+          <input
+            type="text"
+            id="email"
+            placeholder="E-MAIL"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            class="form-control text-white"
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="PASSWORD"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            validate
+            class="form-control text-white mt-3"
+          />
+          <div class="d-flex justify-content-around mt-3 mb-4">
+              <button type="submit" class="btn btn-primary text-white">
+                LOGIN
           </button>
-            <button type="submit">
+            <button type="submit" class="btn btn-primary text-white">
               REGISTER
           </button>
           </div>
-          <div className="button-container-forgot">
-          <button type="submit" className="forgot-button">
-              FORGOT PASSWORD ?
+          <button type="submit" class="btn btn-primary text-white">
+            FORGOT PASSWORD
           </button>
-          </div>
+          <img src={turkuamklogo} alt class="mt-5 mb-4" height="70px" />
         </form>
-        <div className="footer">
-          <div src={turkuamklogo} alt="turkuamklogo" className="footer-img" />
-        </div>
       </article>
     </>
   );

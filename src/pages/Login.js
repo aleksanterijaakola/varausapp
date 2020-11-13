@@ -57,13 +57,6 @@ const Login = () => {
           <button class="btn btn-primary text-white" onClick={() => history.push("/register")}>
             REGISTER
           </button>
-<<<<<<< HEAD
-          <img src={turkuamklogo} alt class="mt-5 mb-4" height="70px" />
-        </form>
-      </article>
-
-    </>
-=======
         </div>
         <button type="submit" class="btn btn-primary text-white">
           FORGOT PASSWORD
@@ -71,7 +64,6 @@ const Login = () => {
         <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
       </form>
     </article>
->>>>>>> Design for Register 99% done
   );
 };
 

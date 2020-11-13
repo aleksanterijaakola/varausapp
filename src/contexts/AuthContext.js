@@ -19,26 +19,26 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   }
 
-// //   function logout() {
-//     return auth.signOut();
-//   }
+  // //   function logout() {
+  //     return auth.signOut();
+  //   }
 
-//   function resetPassword(email) {
-//     return auth.sendPasswordResetEmail(email);
-//   }
+  //   function resetPassword(email) {
+  //     return auth.sendPasswordResetEmail(email);
+  //   }
 
-//   function updateEmail(email) {
-//     return currentUser.updateEmail(email);
-//   }
+  //   function updateEmail(email) {
+  //     return currentUser.updateEmail(email);
+  //   }
 
-//   function updatePassword(password) {
-//     return currentUser.updatePassword(password);
-//   }
+  //   function updatePassword(password) {
+  //     return currentUser.updatePassword(password);
+  //   }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-    //   setLoading(false);
+      //   setLoading(false);
     });
     return unsubscribe;
   }, []);
@@ -52,9 +52,5 @@ export function AuthProvider({ children }) {
     // updateEmail,
     // updatePassword,
   };
-  return (
-    <AuthContext.Provider value={value}>
-      {!loading && children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

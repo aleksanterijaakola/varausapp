@@ -1,64 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import '../App.css';
+import "../App.css";
+import { useAuth } from "../contexts/AuthContext";
 
 const Login = () => {
-
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
   const history = useHistory();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const [error, setError] = useState('')
+  const { login } = useAuth();
 
-
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (password && email) {
-      //const person = { id: new Date().getTime().toString(), password, email };
-      console.log(password, email);
-      setPassword("");
-      setEmail("");
-    } else {
-      console.log("empty values");
-    }
-  };
-  return (
-    <>
-      <article className="login">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="form-control">
-            <h1>Sign In</h1>
-            <input
-              type="text"
-              id="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-control">
-            <input
-              type="password"
-              id="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              validate
-            />
-          </div>
-          <button type="submit" className="buttonContainer" >
-            Login
-          </button>
-        </form>
-        <button onClick={()=> history.push('/register')}>
-          Register
-        </button>
-        <button >
-          Forgot password?
-        </button>
-      </article>
 
-    </>
+    try {
+     
+      setError("");
+      
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/dashboard");
+    } catch {
+      setError("Failed to log in");
+    }
+  }
+
+  return (
+    <article class="text-center">
+      <form class="form-signin" onSubmit={handleSubmit}>
+        <img src="" alt="" className="mb-1" height="70px" />
+        <h1 class="h4 mb-5 font-weight-normal text-white">
+          Booking Computer App
+        </h1>
+        <h2 class="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
+        <label for="inputMail" class="sr-only">
+          Email Address
+        </label>
+        <input
+          type="text"
+          id="email"
+          placeholder="E-MAIL"
+          required
+          ref={emailRef}
+          class="form-control text-white"
+        />
+        <label for="inputPassword" class="sr-only">
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          placeholder="PASSWORD"
+          required
+          ref={passwordRef}
+          class="form-control text-white mt-3"
+        />
+        <div className="d-flex justify-content-around mt-3 mb-4">
+          <button type="submit" class="btn btn-primary text-white">
+            LOGIN
+          </button>
+          <button
+            class="btn btn-primary text-white"
+            onClick={() => history.push("/register")}
+          >
+            REGISTER
+          </button>
+        </div>
+        <button type="submit" class="btn btn-primary text-white">
+          FORGOT PASSWORD
+        </button>
+        <img src="" alt="" class="mt-5 mb-4" height="70px" />
+      </form>
+    </article>
   );
 };
 

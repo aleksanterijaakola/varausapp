@@ -46,7 +46,7 @@ class Register extends Component {
               onChange={this.form.handleChangeEvent}
               name="email"
               placeholder="E-MAIL"
-              class="form-control text-white"
+              class="form-control"
             />
             <label className="error">
               {this.state.errors.email ? this.state.errors.email : ""}
@@ -61,7 +61,7 @@ class Register extends Component {
               onBlur={this.form.handleBlurEvent}
               name="password"
               placeholder="PASSWORD"
-              class="form-control text-white"
+              class="form-control"
             />
             <label className="error">
               {this.state.errors.password ? this.state.errors.password : ""}

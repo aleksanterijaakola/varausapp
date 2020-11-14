@@ -41,7 +41,7 @@ const Login = () => {
           placeholder="E-MAIL"
           required
           ref={emailRef}
-          class="form-control text-white"
+          class="form-control"
         />
         <label for="inputPassword" class="sr-only">
           Password
@@ -52,7 +52,7 @@ const Login = () => {
           placeholder="PASSWORD"
           required
           ref={passwordRef}
-          class="form-control text-white mt-3"
+          class="form-control mt-3"
         />
         <div className="d-flex justify-content-around mt-3 mb-4">
           <button type="submit" class="btn btn-primary text-white">

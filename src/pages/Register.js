@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactFormInputValidation from "react-form-input-validation";
 import "../App.css";
+import thefirmalogo from "../img/thefirma_white.png";
+import turkuamklogo from "../img/turku_amk.png";
 
 class Register extends Component {
   constructor(props) {
@@ -29,7 +31,7 @@ class Register extends Component {
       <React.Fragment>
         <article class="text-center">
           <form class="form-signin" onSubmit={this.form.handleSubmit}>
-            <img src="" alt="" className="mb-1" height="70px" />
+            <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
             <h1 class="h4 mb-5 font-weight-normal text-white">
               Booking Computer App
             </h1>
@@ -77,7 +79,7 @@ class Register extends Component {
                 SIGN UP
               </button>
             </div>
-            <img src="" alt="" class="mt-5 mb-4" height="70px" />
+            <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
           </form>
         </article>
       </React.Fragment>

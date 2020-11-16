@@ -2,21 +2,24 @@ import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import { useAuth } from "../contexts/AuthContext";
+import thefirmalogo from "../img/thefirma_white.png";
+import turkuamklogo from "../img/turku_amk.png";
 
 const Login = () => {
   const history = useHistory();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [error, setError] = useState('')
+  const [error, setError] = useState("");
   const { login } = useAuth();
+
+
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-     
       setError("");
-      
+
       await login(emailRef.current.value, passwordRef.current.value);
       history.push("/dashboard");
     } catch {
@@ -27,7 +30,7 @@ const Login = () => {
   return (
     <article class="text-center">
       <form class="form-signin" onSubmit={handleSubmit}>
-        <img src="" alt="" className="mb-1" height="70px" />
+        <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
         <h1 class="h4 mb-5 font-weight-normal text-white">
           Booking Computer App
         </h1>
@@ -68,7 +71,7 @@ const Login = () => {
         <button type="submit" class="btn btn-primary text-white">
           FORGOT PASSWORD
         </button>
-        <img src="" alt="" class="mt-5 mb-4" height="70px" />
+        <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
       </form>
     </article>
   );

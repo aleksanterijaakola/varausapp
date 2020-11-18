@@ -1,19 +1,41 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Alert } from "react-bootstrap";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../App.css";
 import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
-import { AuthProvider } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext";
 
 const ForgotPassword = () => {
   const history = useHistory();
+  const emailRef = useRef();
+  const { resetPassword } = useAuth();
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmite(e) {
+    e.preventDefault();
+
+    try {
+      setMessage("");
+      setError("");
+      //setLoading(true);
+      await resetPassword(emailRef.current.value);
+      setMessage("Check your inbox for further instructions");
+    } catch {
+      setError("Failed to reset password");
+    }
+    //setLoading(false);
+  }
 
   return (
     <React.Fragment>
       <main>
         <header className="thefirmaimg">
+          {error && <Alert variant="danger">{error}</Alert>}
+          {message && <Alert variant="success">{message}</Alert>}
           <img src={thefirmalogo} alt="thefirmalogo" height="70px" />
           <p class="h4 mb-5 font-weight-normal text-white">
             Booking Computer App
@@ -22,11 +44,8 @@ const ForgotPassword = () => {
         <article style={{ paddingTop: 0, paddingBottom: 0 }}>
           <p className="HeadingForgotPassword">Forgot Password?</p>
 
-          <p className="Textupperinput">
-            Provide Your account's email for which you want to reset your
-            password!
-          </p>
           <Formik
+            handleSubmit
             initialValues={{ email: "" }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
@@ -47,7 +66,7 @@ const ForgotPassword = () => {
               handleBlur,
               isSubmitting,
             }) => (
-              <form className="ForgotPasswordForm" onSubmit={handleSubmit}>
+              <form className="ForgotPasswordForm" onSubmit={handleSubmite}>
                 <input
                   name="email"
                   type="email"
@@ -56,6 +75,7 @@ const ForgotPassword = () => {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  ref={emailRef}
                   required
                 />
                 {errors.email && touched.email && (
@@ -85,12 +105,7 @@ const ForgotPassword = () => {
         </article>
 
         <footer>
-          <img
-            src={turkuamklogo}
-            alt="turkuamklogo"
-            class="mt-5 mb-4"
-            height="70px"
-          />
+          <img src="" alt="" class="mt-5 mb-4" height="70px" />
         </footer>
       </main>
     </React.Fragment>

@@ -72,10 +72,11 @@ class Register extends Component {
               <button
                 onClick={() => this.props.history.push("/login")}
                 class="btn btn-primary text-white"
+                style={{backgroundColor: '#008CBA', marginRight: '2px'}}
               >
                 LOGIN
               </button>
-              <button type="Submit" class="btn btn-primary text-white">
+              <button type="Submit" class="btn btn-primary text-white" style={{backgroundColor: '#008CBA'}}>
                 SIGN UP
               </button>
             </div>

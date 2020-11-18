@@ -28,52 +28,54 @@ const Login = () => {
   }
 
   return (
-    <article class="text-center">
-      <form class="form-signin" onSubmit={handleSubmit}>
-        <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
-        <h1 class="h4 mb-5 font-weight-normal text-white">
-          Booking Computer App
-        </h1>
-        <h2 class="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
-        <label for="inputMail" class="sr-only">
-          Email Address
+    <div class="login-page">
+      <article class="text-center">
+        <form class="form-signin" onSubmit={handleSubmit}>
+          <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
+          <h1 class="h4 mb-5 font-weight-normal text-white">
+            Booking Computer App
+          </h1>
+          <h2 class="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
+          <label for="inputMail" class="sr-only">
+            Email Address
         </label>
-        <input
-          type="text"
-          id="email"
-          placeholder="E-MAIL"
-          required
-          ref={emailRef}
-          class="form-control"
-        />
-        <label for="inputPassword" class="sr-only">
-          Password
+          <input
+            type="text"
+            id="email"
+            placeholder="E-MAIL"
+            required
+            ref={emailRef}
+            class="form-control"
+          />
+          <label for="inputPassword" class="sr-only">
+            Password
         </label>
-        <input
-          type="password"
-          id="password"
-          placeholder="PASSWORD"
-          required
-          ref={passwordRef}
-          class="form-control mt-3"
-        />
-        <div className="d-flex justify-content-around mt-3 mb-4">
+          <input
+            type="password"
+            id="password"
+            placeholder="PASSWORD"
+            required
+            ref={passwordRef}
+            class="form-control mt-3"
+          />
+          <div className="d-flex justify-content-around mt-3 mb-4">
+            <button type="submit" class="btn btn-primary text-white">
+              LOGIN
+          </button>
+            <button
+              class="btn btn-primary text-white"
+              onClick={() => history.push("/register")}
+            >
+              REGISTER
+          </button>
+          </div>
           <button type="submit" class="btn btn-primary text-white">
-            LOGIN
-          </button>
-          <button
-            class="btn btn-primary text-white"
-            onClick={() => history.push("/register")}
-          >
-            REGISTER
-          </button>
-        </div>
-        <button type="submit" class="btn btn-primary text-white">
-          FORGOT PASSWORD
+            FORGOT PASSWORD
         </button>
-        <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
-      </form>
-    </article>
+          <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
+        </form>
+      </article>
+    </div>
   );
 };
 

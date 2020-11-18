@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
 import Register from "./Register";
+import ForgotPassword from "./Forgotpassword";
 import { AuthProvider } from "../contexts/AuthContext"
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
         <Switch>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/register" component={Register} />
-          <Route path="/" component={Login} />
+          <Route path="/forgotpassword" component={ForgotPassword} />
+          <Route path="/" component={Login} />          
         </Switch>
       </AuthProvider>
     </Router>

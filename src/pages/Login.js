@@ -58,21 +58,25 @@ const Login = () => {
           class="form-control mt-3"
         />
         <div className="d-flex justify-content-around mt-3 mb-4">
-          <button type="submit" class="btn btn-primary text-white">
+          <button type="submit" class="btn btn-primary text-white" style={{marginRight: '2px',  backgroundColor: '#008CBA'}}>
             LOGIN
           </button>
           <button
             class="btn btn-primary text-white"
             onClick={() => history.push("/register")}
+            style={{backgroundColor: '#008CBA'}}
           >
             REGISTER
           </button>
         </div>
-        <button type="submit" class="btn btn-primary text-white">
+        <div><button type='button' class="btn btn-primary text-white" 
+        onClick={() => history.push('/forgotpassword')} style={{backgroundColor: '#008CBA'}}>
           FORGOT PASSWORD
-        </button>
+        </button></div>
+       
         <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
       </form>
+      
     </article>
   );
 };

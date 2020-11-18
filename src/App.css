@@ -55,6 +55,182 @@ article {
 }
  
 .btn-primary {
-    border-color: rgba(248, 146, 145, 0.7);
-    background-color: rgba(248, 146, 145, 0.8);
+  width: 200px;
+  height: 40px;
+  font-size: 20px; 
+ margin-left: auto;
+ margin-right: auto;
+  
+  margin-top: 20px;
+
+  background-color: #008CBA;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: none;
+  display: block
 }
+.btn-primary:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-primary:focus{
+
+  outline: none;
+}
+
+
+
+/* ForgotPassword Page*/
+
+/*body aligning to center */
+
+main {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+main > article{
+  justify-content: center;
+  text-align: center;
+ 
+}
+
+.thefirmaimg{
+
+text-align: center;
+justify-content: center;
+
+}
+
+.HeadingForgotPassword {
+    font-size: 2rem;
+    margin-top: 0%;
+    color: white;
+  
+  
+}
+
+
+.Textupperinput{
+font-size: 30px;
+margin-bottom: 3em;
+}
+
+@media screen and (max-width: 800px) {
+  .Textupperinput{
+  font-size: 3vw;
+  margin-bottom: 3em;
+  }
+  }
+
+.PageBackButton{
+  font-size: 40px;
+  width: 20%;
+  border-width: 0px 2px 0px 0px;
+  background-color: #008CBA;
+  color: white;
+  border-color: white;
+  text-align: 'center';
+  padding-top: 1%;
+}
+
+.HeaderText{
+  width: 80%;
+  font-size: 40px;
+  padding-left: 5%;
+  background-color: #008CBA;
+  color: white;
+}
+
+.InputboxEmail{
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px black solid ;
+  
+ margin-left: auto;
+ margin-right: auto;
+  display: block;
+  font-size: 16px;
+  background-color: rgba(248, 146, 145, 0.4);
+  border-color: rgba(248, 146, 145, 0.5);
+
+
+}
+
+.InputboxEmail:focus{
+  outline: none;
+}
+
+.InputboxEmail::-webkit-input-placeholder { /* Edge */
+  color: white;
+  
+}
+
+.InputboxEmail:-ms-input-placeholder { /* Internet Explorer */
+  color: white;
+  
+}
+
+.InputboxEmail::placeholder {
+  color: white;
+  
+}
+
+.buttondivison{margin-left: auto;
+  margin-right: auto;
+justify-content: center;
+text-align: center;}
+
+
+.SendEmailInput{
+  width: 146px;
+  height: 40px;
+  font-size: 20px; 
+ 
+  
+  margin-top: 20px;
+  
+  background-color: #008CBA;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: none;
+  display: block
+
+}
+
+.SendEmailInput:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.SendEmailInput:focus{
+
+  outline: none;
+  z-index: 2;
+}
+.SendEmailInput:active{
+
+  color: green;
+  
+}
+
+
+.ForgotPassworderrors{
+  
+  margin-bottom: 1%;
+  color: red;
+  font-weight: 600;
+}
+
+
+main>footer {
+  text-align: center;
+  justify-content: center;
+}
+

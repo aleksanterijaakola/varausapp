@@ -72,7 +72,7 @@ const Register = () => {
             required
             name="repeatEmail"
             placeholder="REPEAT E-MAIL"
-            className="form-control"
+            className="form-control mt-3"
           />
           <label for="inputPassword" class="sr-only">
             Password
@@ -83,16 +83,16 @@ const Register = () => {
             ref={password}
             placeholder="PASSWORD"
             required
-            class="form-control"
+            class="form-control mt-3"
           />
           <div class="d-flex justify-content-around mt-3 mb-4">
             <button
               onClick={() => history.push("/login")}
-              class="btn btn-primary text-white"
+              class="LoginRegisterForgotButton"
             >
               LOGIN
             </button>
-            <button class="btn btn-primary text-white">SIGN UP</button>
+            <button class="LoginRegisterForgotButton">SIGN UP</button>
           </div>
           <img
             src={turkuamklogo}

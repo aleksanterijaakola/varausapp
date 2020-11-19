@@ -67,6 +67,7 @@ const ForgotPassword = () => {
               isSubmitting,
             }) => (
               <form className="ForgotPasswordForm" onSubmit={handleSubmite}>
+                
                 <input
                   name="email"
                   type="email"
@@ -77,21 +78,22 @@ const ForgotPassword = () => {
                   onBlur={handleBlur}
                   ref={emailRef}
                   required
+                  
                 />
                 {errors.email && touched.email && (
                   <label className="ForgotPassworderrors">{errors.email}</label>
                 )}
 
-                <div className="buttondivison" style={{ display: "flex" }}>
+                <div className="buttondivison" style={{ display: "flex", marginTop: '30px' }}>
                   <input
-                    className="SendEmailInput"
+                    className="LoginRegisterForgotButton"
                     type="submit"
                     value="SEND"
                     disabled={isSubmitting}
                     style={{ marginRight: "2px" }}
                   />
                   <button
-                    className="SendEmailInput"
+                    className="LoginRegisterForgotButton"
                     type="button"
                     value="Login"
                     onClick={() => history.push("/login")}

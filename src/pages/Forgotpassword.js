@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import "../App.css";
 import thefirmalogo from "../img/thefirma_white.png";
-import turkuamklogo from "../img/turku_amk.png";
+// import turkuamklogo from "../img/turku_amk.png";
 import { useAuth } from "../contexts/AuthContext";
 
 const ForgotPassword = () => {
@@ -25,7 +25,7 @@ const ForgotPassword = () => {
       await resetPassword(emailRef.current.value);
       setMessage("Check your inbox for further instructions");
     } catch {
-      setError("Failed to reset password");
+      setError("Email does not exist");
     }
     //setLoading(false);
   }

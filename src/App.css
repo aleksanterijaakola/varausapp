@@ -1,5 +1,3 @@
-
-
 /*main body styling */
 
 body {
@@ -110,7 +108,6 @@ main > article {
   justify-content: center;
 }
 
-
 /*Main Heading for the page*/
 .HeadingForgotPassword {
   font-size: 2rem;
@@ -118,7 +115,6 @@ main > article {
   color: white;
   top: 40px;
 }
-
 
 .Textupperinput {
   font-size: 30px;
@@ -167,7 +163,6 @@ main > article {
   color: white;
 }
 
-
 /*division between buttons*/
 .buttondivison {
   margin-left: auto;
@@ -176,7 +171,6 @@ main > article {
   text-align: center;
 }
 
-
 /*styling of error messages in forgot password screen*/
 .ForgotPassworderrors {
   margin-bottom: 1%;
@@ -184,7 +178,6 @@ main > article {
   color: red;
   font-weight: 600;
   left: 0%;
-  
 }
 
 /*Forgotpassword footer css*/
@@ -198,5 +191,11 @@ main > footer {
   width: 300px;
   margin-left: 40px;
   position: relative;
-  top: 410px
+  top: 450px;
+}
+
+.login-alert {
+  width: 300px;
+  position: relative;
+  top: 44px;
 }

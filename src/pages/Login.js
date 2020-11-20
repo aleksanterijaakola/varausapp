@@ -28,7 +28,7 @@ const Login = () => {
   }
 
   return (
-    <article class="text-center">
+    <article class="text-center">{/**/}
       <form class="form-signin" onSubmit={handleSubmit}>
         <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
         <h1 class="h4 mb-5 font-weight-normal text-white">
@@ -58,19 +58,19 @@ const Login = () => {
           class="form-control mt-3"
         />
         <div className="d-flex justify-content-around mt-3 mb-4">
-          <button type="submit" class="btn btn-primary text-white" style={{marginRight: '2px',  backgroundColor: '#008CBA'}}>
+          <button type="submit" class="LoginRegisterForgotButton" style={{marginRight: '2px'}}>
             LOGIN
           </button>
           <button
-            class="btn btn-primary text-white"
+            className="LoginRegisterForgotButton"
             onClick={() => history.push("/register")}
             style={{backgroundColor: '#008CBA'}}
           >
             REGISTER
           </button>
         </div>
-        <div><button type='button' class="btn btn-primary text-white" 
-        onClick={() => history.push('/forgotpassword')} style={{backgroundColor: '#008CBA'}}>
+        <div><button type='button' class="LoginRegisterForgotButton" 
+        onClick={() => history.push('/forgotpassword')} style={{width: '300px'}}>
           FORGOT PASSWORD
         </button></div>
        

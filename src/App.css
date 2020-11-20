@@ -1,3 +1,7 @@
+
+
+/*main body styling */
+
 body {
   background: linear-gradient(180deg, #f89291 0%, #28d6c0 100%);
   color: white;
@@ -54,12 +58,12 @@ article {
   border-top-right-radius: 0;
 }
 
-.btn-primary {
-  width: 200px;
+/*Styling for the buttons in login Register Forgotpassword Button, there is also some inline css on button elements*/
+
+.LoginRegisterForgotButton {
+  width: 146px;
   height: 40px;
   font-size: 20px;
-  margin-left: auto;
-  margin-right: auto;
 
   margin-top: 20px;
 
@@ -72,12 +76,17 @@ article {
   border: none;
   display: block;
 }
-.btn-primary:hover {
+
+.LoginRegisterForgotButton:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
-.btn-primary:focus {
+.LoginRegisterForgotButton:focus {
   outline: none;
+  z-index: 2;
+}
+.LoginRegisterForgotButton:active {
+  color: green;
 }
 
 /* ForgotPassword Page*/
@@ -101,6 +110,8 @@ main > article {
   justify-content: center;
 }
 
+
+/*Main Heading for the page*/
 .HeadingForgotPassword {
   font-size: 2rem;
   margin-top: 0%;
@@ -108,27 +119,10 @@ main > article {
   top: 40px;
 }
 
+
 .Textupperinput {
   font-size: 30px;
   margin-bottom: 3em;
-}
-
-@media screen and (max-width: 800px) {
-  .Textupperinput {
-    font-size: 3vw;
-    margin-bottom: 3em;
-  }
-}
-
-.PageBackButton {
-  font-size: 40px;
-  width: 20%;
-  border-width: 0px 2px 0px 0px;
-  background-color: #008cba;
-  color: white;
-  border-color: white;
-  text-align: "center";
-  padding-top: 1%;
 }
 
 .HeaderText {
@@ -139,6 +133,7 @@ main > article {
   color: white;
 }
 
+/*for input field in forgotpassword screen*/
 .InputboxEmail {
   width: 300px;
   height: 40px;
@@ -157,6 +152,7 @@ main > article {
   outline: none;
 }
 
+/*placeholder styling*/
 .InputboxEmail::-webkit-input-placeholder {
   /* Edge */
   color: white;
@@ -171,6 +167,8 @@ main > article {
   color: white;
 }
 
+
+/*division between buttons*/
 .buttondivison {
   margin-left: auto;
   margin-right: auto;
@@ -178,46 +176,24 @@ main > article {
   text-align: center;
 }
 
-.SendEmailInput {
-  width: 146px;
-  height: 40px;
-  font-size: 20px;
 
-  margin-top: 20px;
-
-  background-color: #008cba;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  border: none;
-  display: block;
-}
-
-.SendEmailInput:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-.SendEmailInput:focus {
-  outline: none;
-  z-index: 2;
-}
-.SendEmailInput:active {
-  color: green;
-}
-
+/*styling of error messages in forgot password screen*/
 .ForgotPassworderrors {
   margin-bottom: 1%;
+  padding-bottom: 10px;
   color: red;
   font-weight: 600;
+  left: 0%;
+  
 }
 
+/*Forgotpassword footer css*/
 main > footer {
   text-align: center;
   justify-content: center;
 }
 
+/*styling telling weather the reset email was successfully send or not*/
 .alert {
   width: 300px;
   margin-left: 40px;

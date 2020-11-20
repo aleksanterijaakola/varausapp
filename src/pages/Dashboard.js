@@ -5,6 +5,7 @@ import "../components/Tabs.css"
 import "../App.css";
 import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
+import BookingInterface from './BookingInterface'
 
 
 export default function Dashboard() {
@@ -28,32 +29,7 @@ export default function Dashboard() {
         <footer>
           <Tabs>
             <div label="BOOK">
-              <div class="book-page">
-                <article class="text-center">
-                <form class="form-signin">
-                <h2 class="h5 mb-5 font-weight-normal text-white text-left">Booking</h2>
-                  <div class="form-group">
-                    <div class="mb-4">
-                      <label class="sr-only">Date and time</label>
-                      <input class="form-control" type="datetime-local" />
-                    </div>
-                    <div>
-                      <label class="sr-only">Computer ID</label>
-                      <select class="form-control">
-                        <option>Computer 1</option>
-                        <option>Computer 2</option>
-                        <option>Computer 3</option>
-                        <option>Computer 4</option>
-                        <option>Computer 5</option>
-                      </select>
-                    </div>
-                  </div>
-                  </form>
-                </article>
-                <h6>
-                  A great interface to book your seat at <em>theFirma</em>!
-              </h6>
-              </div>
+              <BookingInterface/>
             </div>
             <div label="RESERVATIONS">
               All your reservations will be listed here!

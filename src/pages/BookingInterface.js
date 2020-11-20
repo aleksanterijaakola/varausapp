@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { BiCalendar } from "react-icons/bi";
+
 
 const BookingInterface = () => {
   const [date, setDate] = useState(new Date());
@@ -15,10 +17,11 @@ const BookingInterface = () => {
     <div class="book-page">
       <article class="text-center">
         <form class="form-signin" onSubmit={handleSubmit}>
+          Date
           <div class="form-group">
             <div class="mb-4">
-              Date:
               <label class="sr-only">Date</label>
+              <label>
               <DatePicker
                 required
                 format={"y-MM-dd"}
@@ -26,6 +29,8 @@ const BookingInterface = () => {
                 onChange={setDate}
                 value={date}
               />
+                <BiCalendar/>
+              </label>
             </div>
             <div>
               <label class="sr-only">Computer ID</label>

@@ -24,7 +24,7 @@ const BookingInterface = () => {
   return (
     <div class="book-page">
       <article class="text-center">
-        <form class="form-signin" onSubmit={handleSubmit}>
+        <form class="form-signin" onSubmit={handleSubmit} style={{marginTop:"150px"}}>
           Date
           <div class="form-group">
             <div class="mb-4">
@@ -41,8 +41,11 @@ const BookingInterface = () => {
               </label>
             </div>
             <div>
+              Select preferred Computer:
               <label class="sr-only">Computer ID</label>
-              <select class="form-control" onChange={(e) => {setSelectedComputer(e.target.selectedOptions[0].value)}}>
+              <select class="form-control" style={{textAlign:"center"}} onChange={(e) => {setSelectedComputer(e.target.selectedOptions[0].value)}}>
+
+                <option value="0">any Computer</option>
                 <option value="1">Computer 1</option>
                 <option value="2">Computer 2</option>
                 <option value="3">Computer 3</option>
@@ -66,9 +69,6 @@ const BookingInterface = () => {
           </div>
         </form>
       </article>
-      <h6>
-        A great interface to book your seat at <em>theFirma</em>!
-      </h6>
     </div>
   )
 }

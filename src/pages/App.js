@@ -12,7 +12,7 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
-          <PrivateRoute exact path="/" component={Dashboard} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
           <Route path="/login" component={Login} />

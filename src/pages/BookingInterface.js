@@ -9,6 +9,7 @@ const BookingInterface = () => {
   const [selectedComputer, setSelectedComputer] = useState([])
   const computer = []
   const numberOfComputers = 8
+  const times = []
 
   const handleSelectTimes = function (selectedItems) {
     const times = []
@@ -23,6 +24,18 @@ const BookingInterface = () => {
       computer.push(<option value={i}>Computer {i}</option>);
     }
     return computer
+  }
+
+  const loadPossibleTimes = function (){
+    // get booked times from database and load them here
+    const bookedTimes = []
+    for (let i = 8; i <= 19; i++) {
+      if (!bookedTimes.includes(i))
+      {
+        times.push(<option value={i}>{i}:00</option>);
+      }
+    }
+    return times
   }
 
   async function handleSubmit (e) {
@@ -61,10 +74,7 @@ const BookingInterface = () => {
           </div>
           <div className="timeContainer">
             <select multiple={true} value={selectedTimes} onChange={(e) => {handleSelectTimes(e.target.selectedOptions)}}>
-              <option value="12:00">12:00</option>
-              <option value="13:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
+              {loadPossibleTimes()}
             </select>
           </div>
           <div className="d-flex justify-content-around mt-3 mb-4">

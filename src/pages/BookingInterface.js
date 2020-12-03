@@ -7,6 +7,8 @@ const BookingInterface = () => {
   const [date, setDate] = useState(new Date())
   const [selectedTimes, setSelectedTimes] = useState([])
   const [selectedComputer, setSelectedComputer] = useState([])
+  const computer = []
+  const numberOfComputers = 8
 
   const handleSelectTimes = function (selectedItems) {
     const times = []
@@ -14,6 +16,13 @@ const BookingInterface = () => {
       times.push(selectedItems[i].value)
     }
     setSelectedTimes(times)
+  }
+
+  const loadComputerItems = function (){
+    for (let i = 0; i < numberOfComputers; i++) {
+      computer.push(<option value={i}>Computer {i}</option>);
+    }
+    return computer
   }
 
   async function handleSubmit (e) {
@@ -46,11 +55,7 @@ const BookingInterface = () => {
               <select class="form-control" style={{textAlign:"center"}} onChange={(e) => {setSelectedComputer(e.target.selectedOptions[0].value)}}>
 
                 <option value="0">any Computer</option>
-                <option value="1">Computer 1</option>
-                <option value="2">Computer 2</option>
-                <option value="3">Computer 3</option>
-                <option value="4">Computer 4</option>
-                <option value="5">Computer 5</option>
+                {loadComputerItems()}
               </select>
             </div>
           </div>

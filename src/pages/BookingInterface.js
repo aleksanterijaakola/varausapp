@@ -18,15 +18,15 @@ const BookingInterface = () => {
     for (let i = 0; i < selectedItems.length; i++) {
       times.push(selectedItems[i].value)
     }
-    if (mode === "mo"){
+    if (mode === 'mo') {
       setSelectedTimesMorning(times)
     }
 
-    if (mode === "no"){
+    if (mode === 'no') {
       setSelectedTimesNoon(times)
     }
 
-    if (mode === "ev"){
+    if (mode === 'ev') {
       setSelectedTimesEvening(times)
     }
 
@@ -39,46 +39,22 @@ const BookingInterface = () => {
     return computer
   }
 
-  const loadPossibleTimesMorning = function () {
-    // get booked times from database and load them here
+  const loadPossibleTimes = function (start, end) {
+    // get booked times from database in a different function and access them here as bookedTimes
     const bookedTimes = []
     const times = []
-    for (let i = 8; i <= 11; i++) {
+    for (let i = start; i <= end; i++) {
       if (!bookedTimes.includes(i)) {
         times.push(<option value={i}>{i}:00</option>)
       }
     }
     return times
   }
-
-  const loadPossibleTimesNoon = function () {
-    // get booked times from database and load them here
-    const bookedTimes = []
-    const times = []
-    for (let i = 12; i <= 15; i++) {
-      if (!bookedTimes.includes(i)) {
-        times.push(<option value={i}>{i}:00</option>)
-      }
-    }
-    return times
-  }
-
-  const loadPossibleTimesEvening = function () {
-    // get booked times from database and load them here
-    const bookedTimes = []
-    const times = []
-    for (let i = 16; i <= 19; i++) {
-      if (!bookedTimes.includes(i)) {
-        times.push(<option value={i}>{i}:00</option>)
-      }
-    }
-    return times
-  }
-
+  
   async function handleSubmit (e) {
     e.preventDefault()
     const selectedTimes = selectedTimesMorning.concat(selectedTimesNoon, selectedTimesEvening)
-    console.log(date, selectedTimes , selectedComputer)
+    console.log(date, selectedTimes, selectedComputer)
   }
 
   return (
@@ -120,22 +96,22 @@ const BookingInterface = () => {
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Morning</h8>
                     <span>  <select multiple={true} value={selectedTimesMorning}
-                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, "mo")}}>
-                {loadPossibleTimesMorning()}
+                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, 'mo')}}>
+                {loadPossibleTimes(8, 11)}
             </select> </span>
                   </Column>
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Noon</h8>
                     <span>  <select multiple={true} value={selectedTimesNoon}
-                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, "no")}}>
-                {loadPossibleTimesNoon()}
+                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, 'no')}}>
+                {loadPossibleTimes(12, 15)}
             </select> </span>
                   </Column>
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Evening</h8>
                     <span>  <select multiple={true} value={selectedTimesEvening}
-                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, "ev")}}>
-                {loadPossibleTimesEvening()}
+                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, 'ev')}}>
+                {loadPossibleTimes(16, 19)}
             </select> </span>
                   </Column>
                 </Row>

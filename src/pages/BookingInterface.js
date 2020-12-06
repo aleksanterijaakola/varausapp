@@ -13,28 +13,23 @@ const BookingInterface = () => {
   const computer = []
   const numberOfComputers = 8
 
-  const handleSelectTimesMorning = function (selectedItems) {
+  const handleSelectTimes = function (selectedItems, mode) {
     const times = []
     for (let i = 0; i < selectedItems.length; i++) {
       times.push(selectedItems[i].value)
     }
-    setSelectedTimesMorning(times)
-  }
+    if (mode === "mo"){
+      setSelectedTimesMorning(times)
+    }
 
-  const handleSelectTimesNoon = function (selectedItems) {
-    const times = []
-    for (let i = 0; i < selectedItems.length; i++) {
-      times.push(selectedItems[i].value)
+    if (mode === "no"){
+      setSelectedTimesNoon(times)
     }
-    setSelectedTimesNoon(times)
-  }
 
-  const handleSelectTimesEvening = function (selectedItems) {
-    const times = []
-    for (let i = 0; i < selectedItems.length; i++) {
-      times.push(selectedItems[i].value)
+    if (mode === "ev"){
+      setSelectedTimesEvening(times)
     }
-    setSelectedTimesEvening(times)
+
   }
 
   const loadComputerItems = function () {
@@ -82,7 +77,8 @@ const BookingInterface = () => {
 
   async function handleSubmit (e) {
     e.preventDefault()
-    console.log(date, selectedTimesMorning, selectedComputer)
+    const selectedTimes = selectedTimesMorning.concat(selectedTimesNoon, selectedTimesEvening)
+    console.log(date, selectedTimes , selectedComputer)
   }
 
   return (
@@ -124,21 +120,21 @@ const BookingInterface = () => {
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Morning</h8>
                     <span>  <select multiple={true} value={selectedTimesMorning}
-                                    onChange={(e) => {handleSelectTimesMorning(e.target.selectedOptions)}}>
+                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, "mo")}}>
                 {loadPossibleTimesMorning()}
             </select> </span>
                   </Column>
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Noon</h8>
                     <span>  <select multiple={true} value={selectedTimesNoon}
-                                    onChange={(e) => {handleSelectTimesNoon(e.target.selectedOptions)}}>
+                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, "no")}}>
                 {loadPossibleTimesNoon()}
             </select> </span>
                   </Column>
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Evening</h8>
                     <span>  <select multiple={true} value={selectedTimesEvening}
-                                    onChange={(e) => {handleSelectTimesEvening(e.target.selectedOptions)}}>
+                                    onChange={(e) => {handleSelectTimes(e.target.selectedOptions, "ev")}}>
                 {loadPossibleTimesEvening()}
             </select> </span>
                   </Column>

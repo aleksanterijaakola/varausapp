@@ -73,7 +73,7 @@ const Login = () => {
             REGISTER
           </button>
         </div>
-        <div><button type='button' class="LoginRegisterForgotButton" 
+        <div><button type='button' className="LoginRegisterForgotButton" 
         onClick={() => history.push('/forgotpassword')} style={{width: '300px'}}>
           FORGOT PASSWORD
         </button></div>

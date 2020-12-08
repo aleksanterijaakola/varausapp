@@ -1,18 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './App.css';
-import App from './pages/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./App.css";
+import App from "./pages/App";
 import "bootstrap/dist/css/bootstrap.css";
 import * as serviceWorkerRegistration from "./Register-serviceworker";
-
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

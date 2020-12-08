@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "eslint": "^7.12.1",
-    "react-hook-form": "^6.11.2"
+    "react-hook-form": "^6.11.2",
+    "workbox-cli": "^6.0.2"
   }
 }

@@ -96,6 +96,7 @@ const BookingInterface = () => {
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Morning</h8>
                     <span>  <select multiple={true} value={selectedTimesMorning}
+                                    class="form-control text-center text-black"
                                     onChange={(e) => {handleSelectTimes(e.target.selectedOptions, 'mo')}}>
                 {loadPossibleTimes(8, 11)}
             </select> </span>
@@ -103,6 +104,7 @@ const BookingInterface = () => {
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Noon</h8>
                     <span>  <select multiple={true} value={selectedTimesNoon}
+                                    class="form-control text-center text-black"
                                     onChange={(e) => {handleSelectTimes(e.target.selectedOptions, 'no')}}>
                 {loadPossibleTimes(12, 15)}
             </select> </span>
@@ -110,6 +112,7 @@ const BookingInterface = () => {
                   <Column flexGrow={1} horizontal='center'>
                     <h8> Evening</h8>
                     <span>  <select multiple={true} value={selectedTimesEvening}
+                                    class="form-control text-center text-black"
                                     onChange={(e) => {handleSelectTimes(e.target.selectedOptions, 'ev')}}>
                 {loadPossibleTimes(16, 19)}
             </select> </span>

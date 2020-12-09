@@ -50,7 +50,7 @@ const BookingInterface = () => {
     }
     return times
   }
-  
+
   async function handleSubmit (e) {
     e.preventDefault()
     const selectedTimes = selectedTimesMorning.concat(selectedTimesNoon, selectedTimesEvening)

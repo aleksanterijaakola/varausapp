@@ -354,9 +354,13 @@ main > footer {
 
 .navcheckbox:checked ~ .navdivisionlist{
   left: 0;
+  
 }
 
+.navdivisionlist{
+  z-index: 1000;
 
+}
 
 .react-datepicker-wrapper{
   margin-bottom: 30px;
@@ -501,7 +505,7 @@ input:-webkit-autofill:focus {
 .divforbookingslots > .individual_booking_container{
 
   border: 1px solid black;
-  width: 320px;
+  width: 315px;
   border-radius: 10px;
   background-color: '';
   box-shadow: 10px 10px 5px 0px rgba(248, 146, 145, 0.3);

@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   function changepage(){
    
-    history.push('/login');
+    history.push('/reserve');
 
   };
 
@@ -45,10 +45,10 @@ export default function Dashboard() {
 
           </label>
           <ul className='navdivisionlist'>
-            <li className='navdivisionlistitem activecolor' onClick={() => {setchecked(old => !old); changepage()}}>My Bookings
+            <li className='navdivisionlistitem activecolor' onClick={() => {setchecked(old => !old);}}>My Bookings
 
             </li>
-            <li className='navdivisionlistitem' onClick={() => {setchecked(old => !old)}}>Reserve System
+            <li className='navdivisionlistitem' onClick={() => {setchecked(old => !old);  changepage()}}>Reserve System
               
             </li>
             <li className='navdivisionlistitem' onClick={() => {setchecked(old => !old)}}>Log Out
@@ -75,7 +75,7 @@ export default function Dashboard() {
             minDate={new Date()}/>        
         </div>
 
-        <div className='divforbookingslots'>
+        <div className='divforbookingslots' style={{ justifyContent: 'center'}}>
 
              <div  className='individual_booking_container' >
 
@@ -83,7 +83,7 @@ export default function Dashboard() {
                      <p  className='date_container'>{startDate.toLocaleDateString()}</p>
                      <p className='container_on_left_of_date'>       from   </p>
                      <p  className='time_container'>13:00 to 14:00</p>
-                     <div className="cancel_button_main_container" style={{display: "inline",marginLeft: 45}}>
+                     <div className="cancel_button_main_container" style={{display: "inline",marginLeft: 30}}>
                          <div className="cancel_button_first_child_container" style={{display: "inline"}}>
                              <label className="cancel_button_text" style={{display: "inline",color: "red"}} >Cancel</label>
                          </div>
@@ -107,12 +107,12 @@ export default function Dashboard() {
                      <p  className='date_container'>{startDate.toLocaleDateString()}</p>
                      <p className='container_on_left_of_date'>       from   </p>
                      <p  className='time_container'>13:00 to 14:00</p>
-                     <div className="cancel_button_main_container" style={{display: "inline",marginLeft: 45}}>
+                     <div className="cancel_button_main_container" style={{display: "inline",marginLeft: 30}}>
                          <div className="cancel_button_first_child_container" style={{display: "inline"}}>
                              <label className="cancel_button_text" style={{display: "inline",color: "red"}} >Cancel</label>
                          </div>
                      </div>
-                     
+
                  </div>
 
                  <div style={{marginTop: 10, paddingTop: 15}} clssName='divsystemname'>

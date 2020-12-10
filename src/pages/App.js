@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import Register from "./Register";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./Forgotpassword";
+import  BookingInterface from './BookingInterface'
 import { AuthProvider } from "../contexts/AuthContext";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
+          <PrivateRoute exact path='/reserve' component={BookingInterface} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />

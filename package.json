@@ -22,6 +22,7 @@
     "react-form-with-constraints": "^0.16.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "simple-flexbox": "^2.3.2",
     "web-vitals": "^0.2.4",
     "workbox-core": "^5.1.4",
     "workbox-expiration": "^5.1.4",

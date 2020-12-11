@@ -1,7 +1,9 @@
+/*main body styling */
+
 body {
-    background: linear-gradient(180deg, #F89291 0%, #28D6C0 100%);
-    color: white;
-    background-attachment: fixed;
+  background: linear-gradient(180deg, #f89291 0%, #28d6c0 100%);
+  color: white;
+  background-attachment: fixed;
 }
 
 html,
@@ -38,7 +40,7 @@ root {
   border-color: rgba(248, 146, 145, 0.5);
 }
 .form-signin .form-control::placeholder {
-    color: white;
+  color: white;
 }
 .form-signin .form-control:focus {
   z-index: 2;
@@ -53,10 +55,149 @@ root {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
- 
-.btn-primary {
-    border-color: rgba(248, 146, 145, 0.7);
-    background-color: rgba(248, 146, 145, 0.8);
+
+/*Styling for the buttons in login Register Forgotpassword Button, there is also some inline css on button elements*/
+
+.LoginRegisterForgotButton {
+  width: 146px;
+  height: 40px;
+  font-size: 20px;
+
+  margin-top: 20px;
+
+  background-color: #008cba;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: none;
+  display: block;
+}
+
+.LoginRegisterForgotButton:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.LoginRegisterForgotButton:focus {
+  outline: none;
+  z-index: 2;
+}
+.LoginRegisterForgotButton:active {
+  color: green;
+}
+
+/* ForgotPassword Page*/
+
+/*body aligning to center */
+
+main {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+main > article {
+  justify-content: center;
+  text-align: center;
+}
+
+.thefirmaimg {
+  text-align: center;
+  justify-content: center;
+}
+
+/*Main Heading for the page*/
+.HeadingForgotPassword {
+  font-size: 2rem;
+  margin-top: 0%;
+  color: white;
+  top: 40px;
+}
+
+.Textupperinput {
+  font-size: 30px;
+  margin-bottom: 3em;
+}
+
+.HeaderText {
+  width: 80%;
+  font-size: 40px;
+  padding-left: 5%;
+  background-color: #008cba;
+  color: white;
+}
+
+/*for input field in forgotpassword screen*/
+.InputboxEmail {
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px black solid;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 16px;
+  background-color: rgba(248, 146, 145, 0.4);
+  border-color: rgba(248, 146, 145, 0.5);
+}
+
+.InputboxEmail:focus {
+  outline: none;
+}
+
+/*placeholder styling*/
+.InputboxEmail::-webkit-input-placeholder {
+  /* Edge */
+  color: white;
+}
+
+.InputboxEmail:-ms-input-placeholder {
+  /* Internet Explorer */
+  color: white;
+}
+
+.InputboxEmail::placeholder {
+  color: white;
+}
+
+/*division between buttons*/
+.buttondivison {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+}
+
+/*styling of error messages in forgot password screen*/
+.ForgotPassworderrors {
+  margin-bottom: 1%;
+  padding-bottom: 10px;
+  color: red;
+  font-weight: 600;
+  left: 0%;
+}
+
+/*Forgotpassword footer css*/
+main > footer {
+  text-align: center;
+  justify-content: center;
+}
+
+/*styling telling weather the reset email was successfully send or not*/
+.alert {
+  width: 300px;
+  margin-left: 40px;
+  position: relative;
+  top: 450px;
+}
+
+.login-alert {
+  width: 300px;
+  position: relative;
+  top: 44px;
 }
 
 

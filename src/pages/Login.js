@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import { useAuth } from "../contexts/AuthContext";
+import { Alert } from "react-bootstrap";
 import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
 
@@ -11,6 +12,7 @@ const Login = () => {
   const passwordRef = useRef();
   const [error, setError] = useState("");
   const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
 
 
 
@@ -19,63 +21,67 @@ const Login = () => {
 
     try {
       setError("");
-
+      setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/dashboard");
+      history.push("/");
     } catch {
-      setError("Failed to log in");
+      setError("Email does not exist");
     }
+    setLoading(false);
   }
 
   return (
-    <div class="login-page">
-      <article class="text-center">
-        <form class="form-signin" onSubmit={handleSubmit}>
-          <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
-          <h1 class="h4 mb-5 font-weight-normal text-white">
-            Booking Computer App
-          </h1>
-          <h2 class="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
-          <label for="inputMail" class="sr-only">
-            Email Address
+    <article className="text-center">{/**/}
+      {error && <Alert className="login-alert" variant="danger">{error}</Alert>}
+      <form className="form-signin" onSubmit={handleSubmit}>
+        <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
+        <h1 className="h4 mb-5 font-weight-normal text-white">
+          Booking Computer App
+        </h1>
+        <h2 className="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
+        <label htmlFor="inputMail" className="sr-only">
+          Email Address
         </label>
-          <input
-            type="text"
-            id="email"
-            placeholder="E-MAIL"
-            required
-            ref={emailRef}
-            class="form-control"
-          />
-          <label for="inputPassword" class="sr-only">
-            Password
+        <input
+          type="text"
+          id="email"
+          placeholder="E-MAIL"
+          required
+          ref={emailRef}
+          class="form-control"
+        />
+        <label htmlFor="inputPassword" className="sr-only">
+          Password
         </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="PASSWORD"
-            required
-            ref={passwordRef}
-            class="form-control mt-3"
-          />
-          <div className="d-flex justify-content-around mt-3 mb-4">
-            <button type="submit" class="btn btn-primary text-white">
-              LOGIN
+        <input
+          type="password"
+          id="password"
+          placeholder="PASSWORD"
+          required
+          ref={passwordRef}
+          className="form-control mt-3"
+        />
+        <div className="d-flex justify-content-around mt-3 mb-4">
+          <button disabled={loading} type="submit" className="LoginRegisterForgotButton" style={{marginRight: '2px'}}>
+            LOGIN
           </button>
-            <button
-              class="btn btn-primary text-white"
-              onClick={() => history.push("/register")}
-            >
-              REGISTER
+          <button
+            className="LoginRegisterForgotButton"
+            onClick={() => history.push("/register")}
+            style={{backgroundColor: '#008CBA'}}
+          >
+            REGISTER
           </button>
-          </div>
-          <button type="submit" class="btn btn-primary text-white">
-            FORGOT PASSWORD
-        </button>
-          <img src={turkuamklogo} alt="turkuamklogo" class="mt-5 mb-4" height="70px" />
-        </form>
-      </article>
-    </div>
+        </div>
+        <div><button type='button' className="LoginRegisterForgotButton" 
+        onClick={() => history.push('/forgotpassword')} style={{width: '300px'}}>
+          FORGOT PASSWORD
+        </button></div>
+       
+        <img src={turkuamklogo} alt="turkuamklogo" className="mt-5 mb-4" height="70px" />
+      </form>
+      
+    </article>
   );
 };
 

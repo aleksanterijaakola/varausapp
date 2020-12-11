@@ -7,15 +7,27 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.5.3",
+<<<<<<< HEAD
+=======
+    "email-validator": "^2.0.4",
+>>>>>>> 5930b628a5a7788ca47c4dea2a7869ca1c6ac502
     "firebase": "^8.0.1",
+    "formik": "^2.2.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+<<<<<<< HEAD
     "react-datepicker": "^3.3.0",
     "react-dom": "^17.0.1",
     "react-flexview": "^6.0.1",
     "react-form-input-validation": "^2.0.5",
     "react-form-with-constraints": "^0.16.0",
     "react-icons": "^3.11.0",
+=======
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-form-input-validation": "^2.0.5",
+    "react-form-with-constraints": "^0.16.0",
+>>>>>>> 5930b628a5a7788ca47c4dea2a7869ca1c6ac502
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-select": "^3.1.1",
@@ -25,7 +37,8 @@
     "workbox-expiration": "^5.1.4",
     "workbox-precaching": "^5.1.4",
     "workbox-routing": "^5.1.4",
-    "workbox-strategies": "^5.1.4"
+    "workbox-strategies": "^5.1.4",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,6 +66,11 @@
   },
   "devDependencies": {
     "eslint": "^7.12.1",
+<<<<<<< HEAD
     "simple-flexbox": "^2.3.2"
+=======
+    "react-hook-form": "^6.11.2",
+    "workbox-cli": "^6.0.2"
+>>>>>>> 5930b628a5a7788ca47c4dea2a7869ca1c6ac502
   }
 }

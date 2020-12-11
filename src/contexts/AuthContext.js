@@ -23,9 +23,9 @@ export function AuthProvider({ children }) {
   //     return auth.signOut();
   //   }
 
-  //   function resetPassword(email) {
-  //     return auth.sendPasswordResetEmail(email);
-  //   }
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email);
+  }
 
   //   function updateEmail(email) {
   //     return currentUser.updateEmail(email);
@@ -38,7 +38,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
-      //   setLoading(false);
+      setLoading(false);
     });
     return unsubscribe;
   }, []);
@@ -48,9 +48,13 @@ export function AuthProvider({ children }) {
     signup,
     login,
     // logout,
-    // resetPassword,
+    resetPassword,
     // updateEmail,
     // updatePassword,
   };
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

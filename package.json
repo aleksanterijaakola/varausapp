@@ -24,11 +24,8 @@
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
-<<<<<<< HEAD
     "react-select": "^3.1.1",
     "react-table": "^7.6.2",
-=======
->>>>>>> dev_vikas_navigationbar_mybooking
     "simple-flexbox": "^2.3.2",
     "web-vitals": "^0.2.4",
     "workbox-core": "^5.1.4",

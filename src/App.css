@@ -201,7 +201,6 @@ main > footer {
   top: 44px;
 }
 
-<<<<<<< HEAD
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
   color: white;
@@ -237,7 +236,6 @@ ol{
   align-items: center;
   flex-direction: column;
 }
-=======
 /*navigation bar styling*/
 .headernav {
   padding:0;
@@ -647,4 +645,3 @@ input:-webkit-autofill:focus {
   bottom: 0;
 }
 
->>>>>>> dev_vikas_navigationbar_mybooking

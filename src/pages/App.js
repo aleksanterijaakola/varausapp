@@ -13,8 +13,8 @@ function App() {
     <Router>
       <AuthProvider>
         <Switch>
-          <PrivateRoute exact path='/reserve' component={BookingInterface} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path='/reserve' component={BookingInterface} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
           <Route path="/login" component={Login} />

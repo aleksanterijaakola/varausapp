@@ -61,7 +61,7 @@ const Register = () => {
             required
             name="email"
             placeholder="E-MAIL"
-            className="form-control"
+            className="form-control shadow-none"
           />
           <label htmlFor="inputMail" className="sr-only">
             Email Address
@@ -72,7 +72,7 @@ const Register = () => {
             required
             name="repeatEmail"
             placeholder="REPEAT E-MAIL"
-            className="form-control mt-3"
+            className="form-control mt-3 shadow-none"
           />
           <label htmlFor="inputPassword" className="sr-only">
             Password
@@ -83,7 +83,7 @@ const Register = () => {
             ref={password}
             placeholder="PASSWORD"
             required
-            className="form-control mt-3"
+            className="form-control mt-3 shadow-none"
           />
           <div className="d-flex justify-content-around mt-3 mb-4">
             <button

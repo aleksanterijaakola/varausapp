@@ -43,13 +43,14 @@ const Login = () => {
           Email Address
         </label>
         <input
+          
           type="text"
           id="email"
           placeholder="E-MAIL"
           required
           ref={emailRef}
-          className="form-control"
-        />
+          class="form-control shadow-none"
+        /> 
         <label htmlFor="inputPassword" className="sr-only">
           Password
         </label>
@@ -59,7 +60,7 @@ const Login = () => {
           placeholder="PASSWORD"
           required
           ref={passwordRef}
-          className="form-control mt-3"
+          className="form-control mt-3  shadow-none"
         />
         <div className="d-flex justify-content-around mt-3 mb-4">
           <button disabled={loading} type="submit" className="LoginRegisterForgotButton" style={{marginRight: '2px'}}>

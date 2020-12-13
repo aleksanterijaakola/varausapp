@@ -38,6 +38,7 @@ root {
   font-size: 16px;
   background-color: rgba(248, 146, 145, 0.4);
   border-color: rgba(248, 146, 145, 0.5);
+  color: black !important;
 }
 .form-signin .form-control::placeholder {
   color: white;
@@ -200,6 +201,7 @@ main > footer {
   top: 44px;
 }
 
+<<<<<<< HEAD
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
   color: white;
@@ -235,3 +237,414 @@ ol{
   align-items: center;
   flex-direction: column;
 }
+=======
+/*navigation bar styling*/
+.headernav {
+  padding:0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.headernavtag{
+  background-color: #0082e6;
+   height: 80px;
+    width: 100%;
+
+}
+
+.navcheckbox{
+
+  display: none;
+}
+
+
+
+.navicon{
+  font-size: 30px;
+   float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+  
+}
+
+.labelfirmaimg{
+  line-height: 80px;
+  
+}
+
+.labelfirmaimg > .firmaimg {
+  height: 50px;
+  padding: 0 70px 0 70px;
+
+}
+
+.navdivisionlist{
+  list-style: none;
+  color: white;
+  float: right;
+   margin-right: 20px;
+
+}
+
+.navdivisionlist > .navdivisionlistitem{
+  display: inline-block;
+  padding:0 20px 0 20px;
+  line-height: 80px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 20px;
+  
+}
+
+.activecolor{
+  background-color: #F07082	;
+}
+
+.navdivisionlist > .navdivisionlistitem:hover{
+
+ 
+  color: black;
+ 
+  border-bottom: 0.1px solid white;
+  border-right: 0.1px solid white;
+  box-shadow:  15px 10px -15px #111;
+}
+
+.navdivisionlist > .navdivisionlistitem:active{
+
+  box-sizing: 10px 10px 5px #aaaaaa;
+  color: #333;}
+
+
+
+  
+@media (max-width: 900px) {
+  .labelfirmaimg > .firmaimg {
+    height: 30px;
+    padding: 0 50px 0 50px;
+  
+  }
+  .navdivisionlist > .navdivisionlistitem{
+
+    font-size: 15px;
+  }
+
+  
+}
+
+
+
+@media (max-width: 300px) {
+  .labelfirmaimg > .firmaimg{
+    height: 30px;
+    padding: 0 30px 0 30px;
+    
+  }}
+
+  @media (max-width: 750px) {
+    .navicon{
+      display: block;
+      line-height: 80px;
+    }
+.navdivisionlist{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 80px;
+  left: -100%;
+  transition: all .5s;
+  text-align: center;
+  background-color: #6CB4EE;
+  
+}
+
+.navdivisionlist > .navdivisionlistitem{
+
+  display: block;
+  font-size: 30px;
+ border-bottom: 1px solid black;
+}
+
+.navdivisionlist > .navdivisionlistitem:hover{
+  
+  color: black;
+}
+
+.navdivisionlist > .navdivisionlistitem:active{
+  background-color: none;
+  color: rgb(253, 97, 175);
+  border: none;
+  
+}
+
+
+.activecolor{
+  background-color: transparent;
+}
+
+
+}
+
+.navcheckbox:checked ~ .navdivisionlist{
+  left: 0;
+  
+}
+
+.navdivisionlist{
+  z-index: 1000;
+
+}
+
+.react-datepicker-wrapper{
+  margin-bottom: 30px;
+}
+
+
+ 
+
+.form-control:focus{
+background-color: black !important;
+background-color: rgba(248, 146, 145, 0.4) !important;
+  border-color: rgba(248, 146, 145, 0.5) !important;
+  
+}
+
+/*styling on autofill of the email column*/
+input:-webkit-autofill { 
+  -webkit-box-shadow: 0 0 0 30px  rgba(248, 147, 145, 1) inset !important;
+  box-shadow: 0 0 0 30px rgba(248, 146, 145, 0.9) inset !important;
+  border-color: rgba(248, 146, 145, 0.5) !important;
+  -webkit-text-fill-color: black;
+}
+input:-webkit-autofill:focus { 
+  -webkit-box-shadow: 0 0 0 30px  rgba(248, 146, 145, 1) !important;
+  box-shadow: 0 0 0 30px rgba(248, 146, 145, 0.9) inset !important;
+  border-color: rgba(248, 146, 145, 0.5) !important;
+  -webkit-text-fill-color: black;
+}
+
+.react-datepicker__input-container,.datepickerclass{
+
+  width: 100px;
+  z-index: 0 !important;
+  
+
+}
+
+
+
+
+
+/*styling article and the foote(dashboard)*/
+.Headingtop{
+  text-shadow: 0 1px 0 #ccc, 
+  0 2px 0 #c9c9c9,
+  0 3px 0 #bbb,
+  0 4px 0 #b9b9b9,
+  0 5px 0 #aaa,
+  0 6px 1px rgba(0, 0, 0, 0.1),
+  0 0 5px rgba(0,0,0,.1),
+  0 1px 3px rgba(0,0,0,.3),
+  0 3px 5px rgba(0,0,0,.2),
+  0 5px 10px rgba(0,0,0,.25),
+  0 10px 10px rgba(0,0,0,.2),
+  0 20px 20px rgba(0,0,0,.15);
+  font-weight: 800;
+  font-size: 40px;
+  color: white;
+  margin-bottom: 50px;
+
+}
+
+/*adjust booking colunms main div with the change in screen size and other css*/
+
+.divforbookingslots{
+  margin-left: 38%;
+  padding: 20px 30px 20px 30px;
+  align-content: center;
+  justify-content: center;
+ 
+}
+
+
+@media (max-width: 1100px){
+  .divforbookingslots{
+
+    margin-left: 33%;
+  
+  }
+
+}
+
+@media (max-width: 900px){
+  .divforbookingslots{
+    margin-left: 30%;
+
+  }
+
+}
+
+@media (max-width: 700px){
+  .divforbookingslots{
+    margin-left: 24%;
+  }
+
+}
+
+@media (max-width: 600px){
+  .divforbookingslots{
+    margin-left: 20%;
+
+  }
+
+}
+
+@media (max-width: 500px){
+  .divforbookingslots{
+    margin-left: 15%;
+
+  }
+
+}
+
+
+@media (max-width: 450px){
+  .divforbookingslots{
+    margin-left: 8%;
+
+  }
+
+}
+
+@media (max-width: 450px){
+  .divforbookingslots{
+    margin-left: 0%;
+   
+
+  }
+
+}
+
+@media (max-width: 400px){
+  .divforbookingslots{
+    padding-left: 4px;
+   
+
+  }
+
+}
+
+/*div for individal individual booking*/
+.divforbookingslots > .individual_booking_container{
+
+  border: 1px solid black;
+  width: 315px;
+  border-radius: 10px;
+  background-color: '';
+  box-shadow: 10px 10px 5px 0px rgba(248, 146, 145, 0.3);
+  margin-bottom:20px;
+  padding-top: 5px;
+}
+
+
+/*div for individal individual booking,(date time and cancel button container)*/
+.divforbookingslots > .individual_booking_container > .time_cancel_date_container{
+
+  text-align: left;
+  margin-top: 3px;
+}
+
+/*div for individal individual booking,(date container)*/
+.divforbookingslots > .individual_booking_container > .time_cancel_date_container > .date_container{
+  display: inline;
+  text-align: left; 
+  border: .5px grey solid; 
+  margin-left: 5px;
+
+}
+
+/*div for individal individual booking,(on right of date)*/
+.divforbookingslots > .individual_booking_container > .time_cancel_date_container > .container_on_left_of_date{
+  display: inline;
+
+}
+
+/*div for individal individual booking,( time container)*/
+.divforbookingslots > .individual_booking_container > .time_cancel_date_container > .time_container{
+  display: inline; 
+  text-align: left;
+  border: .5px grey solid;
+
+}
+
+/*cancel button css, which will cancel the booking*/
+
+.cancel_button_main_container {
+  position: relative;
+  margin: auto;
+  width: 30px; 
+  cursor: pointer;
+}
+
+.cancel_button_first_child_container {
+  width: inherit;
+  text-align: center;
+}
+
+.cancel_button_text { 
+  font-size: .8em; 
+  
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .3s ease-in;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.cancel_button_first_child_container:before, .cancel_button_first_child_container:after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: inherit;
+  background: rgb(238, 103, 103);
+  left: 0;
+  transition: all .3s ease-in;
+}
+
+.cancel_button_first_child_container:before {
+  top: 50%; 
+  transform: rotate(45deg);  
+}
+
+.cancel_button_first_child_container:after {  
+  bottom: 50%;
+  transform: rotate(-45deg);  
+}
+
+.cancel_button_main_container:hover .cancel_button_text {
+  opacity: 1;
+ 
+}
+
+.cancel_button_main_container:hover{
+  width: 45px;
+}
+
+.cancel_button_main_container:hover .cancel_button_first_child_container:before,
+.cancel_button_main_container:hover .cancel_button_first_child_container:after {
+  transform: rotate(0);
+}
+
+.cancel_button_main_container:hover .cancel_button_first_child_container:before {
+  top: 0;
+}
+
+.cancel_button_main_container:hover .cancel_button_first_child_container:after {
+  bottom: 0;
+}
+
+>>>>>>> dev_vikas_navigationbar_mybooking

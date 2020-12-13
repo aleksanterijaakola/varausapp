@@ -17,12 +17,12 @@ export default function Dashboard() {
         <NavigationBar />
       </header>
       <div>
-        <article class="text-center">
+        <article className="text-center">
           <div className="d-flex justify-content-around mt-2 mb-4 pl-5">
             <img src={thefirmalogo} alt="thefirmalogo" height="50px" />
             <img src={turkuamklogo} alt="turkuamklogo" height="45px" />
           </div>
-          <h1 class="h4 mb-5 font-weight-normal text-white">
+          <h1 className="h4 mb-5 font-weight-normal text-white">
             Booking Computer App
           </h1>
         </article>

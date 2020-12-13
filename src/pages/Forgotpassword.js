@@ -37,7 +37,7 @@ const ForgotPassword = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
           <img src={thefirmalogo} alt="thefirmalogo" height="70px" />
-          <p class="h4 mb-5 font-weight-normal text-white">
+          <p className="h4 mb-5 font-weight-normal text-white">
             Booking Computer App
           </p>
         </header>
@@ -107,7 +107,7 @@ const ForgotPassword = () => {
         </article>
 
         <footer>
-          <img src="" alt="" class="mt-5 mb-4" height="70px" />
+          <img src="" alt="" className="mt-5 mb-4" height="70px" />
         </footer>
       </main>
     </React.Fragment>

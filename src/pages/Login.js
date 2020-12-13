@@ -48,7 +48,7 @@ const Login = () => {
           placeholder="E-MAIL"
           required
           ref={emailRef}
-          class="form-control"
+          className="form-control"
         />
         <label htmlFor="inputPassword" className="sr-only">
           Password

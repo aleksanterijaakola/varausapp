@@ -39,8 +39,8 @@ class Tabs extends Component {
             return child.props.children;
           })}
         </div>
-        <ol class="nav nav-tabs nav-fill">
-          <div class="nav-item nav-link">
+        <ol className="nav nav-tabs nav-fill">
+          <div className="nav-item nav-link">
             {children.map((child) => {
               const { label } = child.props;
 

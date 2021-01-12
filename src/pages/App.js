@@ -17,7 +17,7 @@ function App() {
           <PrivateRoute exact path='/reserve' component={BookingInterface} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
-          <Route path="/login" component={Login} />
+          <Route path="/" component={Login} />
         </Switch>
       </AuthProvider>
     </Router>

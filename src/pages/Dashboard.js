@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -40,7 +40,7 @@ export default function Dashboard() {
             </label>
 
             <label className="labelfirmaimg" style={{ marginBottom: 0 }}>
-              <img className="firmaimg" src={thefirmalogo}></img>
+              <img className="firmaimg" src={thefirmalogo} alt=""></img>
             </label>
             <ul className="navdivisionlist">
               <li
@@ -79,7 +79,7 @@ export default function Dashboard() {
             <DatePicker
               selected={startDate}
               onChange={(date) => setStartDate(date)}
-              filterDate={(date) => date.getDay() != 6 && date.getDay() != 0}
+              filterDate={(date) => date.getDay() !== 6 && date.getDay() !== 0}
               className="datepickerclass"
               id="datepicker"
               minDate={new Date()}
@@ -167,7 +167,7 @@ export default function Dashboard() {
         </article>
         <footer>
           <hr style={{ marginLeft: "30%", marginRight: "30%" }} />
-          <img className="imgfirma" src={turkuamklogo} style={{ height: 50 }} />
+          <img className="imgfirma" src={turkuamklogo} alt="" style={{ height: 50 }} />
         </footer>
       </main>
     </React.Fragment>

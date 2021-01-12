@@ -23,7 +23,7 @@ const Login = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history.push("/dashboard");
     } catch {
       setError("Email does not exist");
     }

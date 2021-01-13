@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./NavigationBar.css";
@@ -12,7 +12,9 @@ function NavigationBar() {
         <div></div>
       </button>
       <ul onClick={showNavbar}>
-        <li><Link to="/login">Logout</Link></li>
+        <li>
+          <Link to="/login">Logout</Link>
+        </li>
       </ul>
     </nav>
   );

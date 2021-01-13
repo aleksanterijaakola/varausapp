@@ -134,7 +134,7 @@ export default function Dashboard() {
 
               <div
                 style={{ marginTop: 10, paddingTop: 15 }}
-                clssName="divsystemname"
+                className="divsystemname"
               >
                 <p style={{ textAlign: "left", fontSize: 20, color: "black" }}>
                   &nbsp;

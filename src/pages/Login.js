@@ -14,8 +14,6 @@ const Login = () => {
   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
 
-
-
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -31,26 +29,37 @@ const Login = () => {
   }
 
   return (
-    <article className="text-center">{/**/}
-      {error && <Alert className="login-alert" variant="danger">{error}</Alert>}
+    <article className="text-center">
+      {/**/}
+      {error && (
+        <Alert className="login-alert" variant="danger">
+          {error}
+        </Alert>
+      )}
       <form className="form-signin" onSubmit={handleSubmit}>
-        <img src={thefirmalogo} alt="thefirmalogo" className="mb-1" height="70px" />
+        <img
+          src={thefirmalogo}
+          alt="thefirmalogo"
+          className="mb-1"
+          height="70px"
+        />
         <h1 className="h4 mb-5 font-weight-normal text-white">
           Booking Computer App
         </h1>
-        <h2 className="h5 mb-3 font-weight-normal text-white text-left">Login</h2>
+        <h2 className="h5 mb-3 font-weight-normal text-white text-left">
+          Login
+        </h2>
         <label htmlFor="inputMail" className="sr-only">
           Email Address
         </label>
         <input
-          
           type="text"
           id="email"
           placeholder="E-MAIL"
           required
           ref={emailRef}
-          class="form-control shadow-none"
-        /> 
+          className="form-control shadow-none"
+        />
         <label htmlFor="inputPassword" className="sr-only">
           Password
         </label>
@@ -63,25 +72,40 @@ const Login = () => {
           className="form-control mt-3  shadow-none"
         />
         <div className="d-flex justify-content-around mt-3 mb-4">
-          <button disabled={loading} type="submit" className="LoginRegisterForgotButton" style={{marginRight: '2px'}}>
+          <button
+            disabled={loading}
+            type="submit"
+            className="LoginRegisterForgotButton"
+            style={{ marginRight: "2px" }}
+          >
             LOGIN
           </button>
           <button
             className="LoginRegisterForgotButton"
             onClick={() => history.push("/register")}
-            style={{backgroundColor: '#008CBA'}}
+            style={{ backgroundColor: "#008CBA" }}
           >
             REGISTER
           </button>
         </div>
-        <div><button type='button' className="LoginRegisterForgotButton" 
-        onClick={() => history.push('/forgotpassword')} style={{width: '300px'}}>
-          FORGOT PASSWORD
-        </button></div>
-       
-        <img src={turkuamklogo} alt="turkuamklogo" className="mt-5 mb-4" height="70px" />
+        <div>
+          <button
+            type="button"
+            className="LoginRegisterForgotButton"
+            onClick={() => history.push("/forgotpassword")}
+            style={{ width: "300px" }}
+          >
+            FORGOT PASSWORD
+          </button>
+        </div>
+
+        <img
+          src={turkuamklogo}
+          alt="turkuamklogo"
+          className="mt-5 mb-4"
+          height="70px"
+        />
       </form>
-      
     </article>
   );
 };

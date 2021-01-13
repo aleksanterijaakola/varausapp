@@ -5,17 +5,30 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
+import { useAuth } from '../contexts/AuthContext';
 
 import { faList, faDesktop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Dashboard() {
   const history = useHistory();
+  const [error, setError] = useState("");
+  const { logout } = useAuth()
   const [inputcheck, setchecked] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
 
   function changepage() {
     history.push("/reserve");
+  }
+ // Function to handle logout and redirect to /login when successful
+  async function handleLogout() {
+    setError('')
+    try {
+      await logout()
+      history.push('/login')
+    } catch {
+      setError('Failed to log out')
+    }
   }
 
   return (
@@ -65,8 +78,12 @@ export default function Dashboard() {
                 onClick={() => {
                   setchecked((old) => !old);
                 }}
+              > 
+              <li
+              onClick={handleLogout}
               >
                 Log Out
+              </li>
               </li>
             </ul>
           </nav>

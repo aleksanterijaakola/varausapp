@@ -11,7 +11,7 @@ const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const [error, setError] = useState("");
-  const { login } = useAuth();
+  //const { login } = useAuth();
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e) {

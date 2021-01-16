@@ -60,8 +60,11 @@
     ]
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.12.1",
     "react-hook-form": "^6.11.2",
+    "react-test-renderer": "^17.0.1",
     "workbox-cli": "^6.0.2"
   }
 }

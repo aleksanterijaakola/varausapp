@@ -2,13 +2,13 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const app = firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
+  apiKey: "AIzaSyAmapZ4HyS11Vh0elY2PWz6_eyHd-wcr5Y",
+  authDomain: "booking-app-48201.firebaseapp.com",
+  databaseURL: "https://booking-app-48201.firebaseio.com",
+  projectId: "booking-app-48201",
+  storageBucket: "booking-app-48201.appspot.com",
+  messagingSenderId: "362177666940",
+  appId: "1:362177666940:web:757c50d77d2f5c5cf60ef9"
 });
 
 

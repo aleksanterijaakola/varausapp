@@ -26,11 +26,11 @@ const Login = () => {
   return (
     <article className="text-center">
       {/**/}
-      {error && (
+       {error && (
         <Alert className="login-alert" variant="danger">
           {alert}
         </Alert > 
-      )}
+      )} 
       <form className="form-signin" onSubmit={signIn}>
         <img
           src={thefirmalogo}

@@ -1,42 +1,37 @@
 import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
-import { useAuth } from "../contexts/AuthContext";
 import { Alert } from "react-bootstrap";
 import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
+import { auth } from "../firebase";
 
 const Login = () => {
   const history = useHistory();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const [error, setError] = useState("");
-  //const { login } = useAuth();
-  const [loading, setLoading] = useState(false);
-
-  async function handleSubmit(e) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("")
+ // error message implementation unfinished
+  const signIn = (e) => {
     e.preventDefault();
 
-    try {
-      setError("");
-      setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/dashboard");
-    } catch {
-      setError("Email does not exist");
-    }
-    setLoading(false);
-  }
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/dashboard");
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <article className="text-center">
       {/**/}
       {error && (
         <Alert className="login-alert" variant="danger">
-          {error}
-        </Alert>
+          {alert}
+        </Alert > 
       )}
-      <form className="form-signin" onSubmit={handleSubmit}>
+      <form className="form-signin" onSubmit={signIn}>
         <img
           src={thefirmalogo}
           alt="thefirmalogo"
@@ -57,8 +52,9 @@ const Login = () => {
           id="email"
           placeholder="E-MAIL"
           required
-          ref={emailRef}
+          value={email}
           className="form-control shadow-none"
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="inputPassword" className="sr-only">
           Password
@@ -68,12 +64,12 @@ const Login = () => {
           id="password"
           placeholder="PASSWORD"
           required
-          ref={passwordRef}
+          value={password}
           className="form-control mt-3  shadow-none"
+          onChange={(e) => setPassword(e.target.value)}
         />
         <div className="d-flex justify-content-around mt-3 mb-4">
           <button
-            disabled={loading}
             type="submit"
             className="LoginRegisterForgotButton"
             style={{ marginRight: "2px" }}

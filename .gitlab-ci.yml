@@ -6,6 +6,8 @@ stages:
 test:
   stage: test
   script: 
-    - npm install
+    - npm ci
     - npm test a
   tags: [test]
+
+

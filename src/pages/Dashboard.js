@@ -1,40 +1,41 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import "../App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
-import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
-import { useAuth } from '../contexts/AuthContext';
+//import { useAuth } from "../contexts/AuthContext";
+import Navbar from '../components/Navbar'
 
-import { faList, faDesktop } from "@fortawesome/free-solid-svg-icons";
+import { faDesktop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Dashboard() {
-  const history = useHistory();
-  const [error, setError] = useState("");
-  const { logout } = useAuth()
-  const [inputcheck, setchecked] = useState(false);
+  //const history = useHistory();
+  //const [error, setError] = useState("");
+  //const { logout } = useAuth();
+  //const [inputcheck, setchecked] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
 
-  function changepage() {
-    history.push("/reserve");
-  }
- // Function to handle logout and redirect to /login when successful
-  async function handleLogout() {
-    setError('')
-    try {
-      await logout()
-      history.push('/login')
-    } catch {
-      setError('Failed to log out')
-    }
-  }
+  // function changepage() {
+  //   history.push("/reserve");
+  // }
+  // Function to handle logout and redirect to /login when successful
+  // async function handleLogout() {
+  //   setError("");
+  //   try {
+  //     await logout();
+  //     history.push("/login");
+  //   } catch {
+  //     setError("Failed to log out");
+  //   }
+  // }
 
   return (
     <React.Fragment>
-      <main style={{ paddingTop: 0 }}>
-        <header className="headernav">
+      <main style={{ paddingTop: 0 }}> 
+      <Navbar />
+        {/* <header className="headernav">
           <nav className="headernavtag">
             <input
               type="checkbox"
@@ -78,18 +79,14 @@ export default function Dashboard() {
                 onClick={() => {
                   setchecked((old) => !old);
                 }}
-              > 
-              <li
-              onClick={handleLogout}
               >
-                Log Out
-              </li>
+                <li onClick={handleLogout}>Log Out</li>
               </li>
             </ul>
           </nav>
         </header>
         <article className="articlemybookings">
-          <div className="Headingtop">Your Bookings</div>
+          <div className="Headingtop">Your Bookings</div> */}
 
           <div>
             <p style={{ fontSize: 20 }}>Select Date</p>
@@ -181,10 +178,15 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-        </article>
+        {/* </article> */}
         <footer>
           <hr style={{ marginLeft: "30%", marginRight: "30%" }} />
-          <img className="imgfirma" src={turkuamklogo} alt="" style={{ height: 50 }} />
+          <img
+            className="imgfirma"
+            src={turkuamklogo}
+            alt=""
+            style={{ height: 50 }}
+          />
         </footer>
       </main>
     </React.Fragment>

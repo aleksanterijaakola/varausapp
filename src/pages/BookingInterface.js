@@ -3,6 +3,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { BiCalendar } from "react-icons/bi";
 import { Column, Row } from "simple-flexbox";
+import Navbar from '../components/Navbar'
+
 
 const BookingInterface = () => {
   const [date, setDate] = useState(new Date());
@@ -60,7 +62,9 @@ const BookingInterface = () => {
   }
 
   return (
+    
     <div className="book-page">
+     <Navbar />
       <article className="text-center">
         <form
           className="form-signin"

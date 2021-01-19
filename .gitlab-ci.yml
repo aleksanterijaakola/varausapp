@@ -1,4 +1,4 @@
-image: node:latest
+#image: node:latest
 
 stages:
   - test
@@ -14,7 +14,7 @@ test:
   stage: test
 
   script:
-    - npm ci
+    - npm install
     - npm test a
 
   tags: [test]

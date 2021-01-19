@@ -5,6 +5,9 @@ stages:
 
 test:
   stage: test
+  cache:
+  key: "$CI_JOB_NAME-$CI_COMMIT_REF_SLUG"
+
   script: 
     - npm ci
     - npm test a

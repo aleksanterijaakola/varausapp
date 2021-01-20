@@ -3,8 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { BiCalendar } from "react-icons/bi";
 import { Column, Row } from "simple-flexbox";
-import Navbar from '../components/Navbar'
-
+import Navbar from "../components/Navbar";
 
 const BookingInterface = () => {
   const [date, setDate] = useState(new Date());
@@ -62,9 +61,8 @@ const BookingInterface = () => {
   }
 
   return (
-    
     <div className="book-page">
-     <Navbar />
+      <Navbar />
       <article className="text-center">
         <form
           className="form-signin"
@@ -80,7 +78,7 @@ const BookingInterface = () => {
                   required
                   format={"y-MM-dd"}
                   selected={date}
-                  onChange={setDate}
+                  onChange={(date) => setDate(date)}
                   value={date}
                 />
                 <BiCalendar />
@@ -105,7 +103,7 @@ const BookingInterface = () => {
             <div>
               <Column flexGrow={1}>
                 <Row horizontal="center">
-                  <span>{" "}</span>
+                  <span> </span>
                 </Row>
                 <Row vertical="center">
                   <Column flexGrow={1} horizontal="center">
@@ -170,6 +168,5 @@ const BookingInterface = () => {
     </div>
   );
 };
-
 
 export default BookingInterface;

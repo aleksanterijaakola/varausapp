@@ -5,16 +5,16 @@ import thefirmalogo from "../img/thefirma_white.png";
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
       setButton(true);
+    } else {
+      setButton(false);
     }
   };
 
@@ -31,7 +31,8 @@ function Navbar() {
             to="/dashboard "
             className="navbar-logo"
             onClick={closeMobileMenu}
-          >
+          ></Link>
+          <div>
             <Link to="/dashboard">
               <img
                 className="imgfirma"
@@ -40,7 +41,7 @@ function Navbar() {
                 style={{ height: 50 }}
               />
             </Link>
-          </Link>
+          </div>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
@@ -71,21 +72,20 @@ function Navbar() {
                 Logout{" "}
               </Link>
             </li>
-            <li>
+            <div>
               <a
                 href="https://www.instagram.com/thefirmatuas/?hl=fi"
                 className="instagram-icon"
               >
-                <i class="fab fa-instagram"></i>
+                <i className="fab fa-instagram"></i>
               </a>
-
               <a
                 href="https://www.facebook.com/thefirmatuas"
                 className="facebook-icon"
               >
-                <i class="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f"></i>
               </a>
-            </li>
+            </div>
           </ul>
         </div>
       </nav>

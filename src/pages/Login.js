@@ -10,7 +10,7 @@ const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("")
+  const [error, ] = useState("")
  // error message implementation unfinished
   const signIn = (e) => {
     e.preventDefault();

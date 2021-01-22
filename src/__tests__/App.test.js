@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { shallow } from "enzyme";
-import Button from "../pages/Login";
-import App from "../pages/App";
+import Button from "../components/Login";
+import App from "../components/App";
 
 describe("Button", () => {
   it("should be defined", () => {

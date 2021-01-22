@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-import App from "./pages/App";
+import App from './components/App'
 import "bootstrap/dist/css/bootstrap.css";
 import * as serviceWorkerRegistration from "./Register-serviceworker";
 

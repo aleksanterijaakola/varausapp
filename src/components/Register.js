@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 import thefirmalogo from "../img/thefirma_white.png";
 import turkuamklogo from "../img/turku_amk.png";
 import { useHistory} from "react-router-dom";
+import Axios from "axios";
 
 const Register = () => {
   const { signup } = useAuth();
@@ -12,6 +13,24 @@ const Register = () => {
   const repeatEmail = useRef();
   const password = useRef();
   const [error, setError] = useState("");
+  
+  //States for Database
+  const [dbEmail, setDbEmail] = useState('');
+  const [dbRepeatEmail, setDbRepeatEmail] = useState(''); 
+  const [dbPassword, setDbPassword] = useState('');
+  
+  const addUser = () => {
+
+    //Checks if fields are incorrectly filled
+    if (!dbEmail || !dbRepeatEmail || !dbPassword || dbEmail !== dbRepeatEmail) {
+      return
+    }
+    
+    Axios.post("http://localhost:3001/new_user", {
+      email: dbEmail,
+      password: dbPassword,
+    });
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -62,6 +81,7 @@ const Register = () => {
             name="email"
             placeholder="E-MAIL"
             className="form-control shadow-none"
+            onChange={(e) => setDbEmail(e.target.value)}
           />
           <label htmlFor="inputMail" className="sr-only">
             Email Address
@@ -73,6 +93,7 @@ const Register = () => {
             name="repeatEmail"
             placeholder="REPEAT E-MAIL"
             className="form-control mt-3 shadow-none"
+            onChange={(e) => setDbRepeatEmail(e.target.value)}
           />
           <label htmlFor="inputPassword" className="sr-only">
             Password
@@ -84,6 +105,7 @@ const Register = () => {
             placeholder="PASSWORD"
             required
             className="form-control mt-3 shadow-none"
+            onChange={(e) => setDbPassword(e.target.value)}
           />
           <div className="d-flex justify-content-around mt-3 mb-4">
             <button
@@ -92,7 +114,7 @@ const Register = () => {
             >
               LOGIN
             </button>
-            <button className="LoginRegisterForgotButton">SIGN UP</button>
+            <button className="LoginRegisterForgotButton" onClick={() => addUser()>SIGN UP</button>
           </div>
           <img
             src={turkuamklogo}

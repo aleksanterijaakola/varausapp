@@ -7,10 +7,12 @@ const app = express();
 const UserModel = require("./models/users.js");
 const BookingModel = require("./models/bookings");
 
+
 app.use(express.json())
 app.use(cors());
 
-mongoose.connect("mongodb+srv://testi1:<password>@cluster0.2dj8w.mongodb.net/booking_app?retryWrites=true&w=majority", {
+
+mongoose.connect("Your MongoDB-link here", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -33,7 +35,7 @@ app.post('/new_user', async (req, res) => {
     } catch(err) {
         console.log(err)
     } 
-})
+});
 
 
 app.post('/new_booking', async (req, res) => {
@@ -48,7 +50,8 @@ app.post('/new_booking', async (req, res) => {
     } catch(err) {
         console.log(err)
     } 
-})
+});
+
 
 app.get('/read_bookings', async (req, res) => {
 
@@ -59,7 +62,8 @@ app.get('/read_bookings', async (req, res) => {
 
         res.send(result);
     })
-})
+});
+
 
 app.delete("/delete/:id", async (req, res) => {
     
@@ -67,4 +71,4 @@ app.delete("/delete/:id", async (req, res) => {
     await BookingModel.findByIdAndDelete(id).exec();
     (id);
     res.send("deleted")  
-})
+});

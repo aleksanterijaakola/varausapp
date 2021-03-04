@@ -4,15 +4,14 @@ import "../App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import turkuamklogo from "../img/turku_amk.png";
-<<<<<<< HEAD
+
 // import { useAuth } from "../contexts/AuthContext";
-import Navbar from '../components/Navbar'
-=======
+
 //import { useAuth } from "../contexts/AuthContext";
 import Navbar from '../components/Navbar';
 import Axios from 'axios';
 import { AuthContext } from '../contexts/AuthContext';
->>>>>>> e5c610d211a7141b8c5a7bacbcd3e335f3c832d9
+
 
 import { faDesktop } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

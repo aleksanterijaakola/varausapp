@@ -114,7 +114,7 @@ const Register = () => {
             >
               LOGIN
             </button>
-            <button className="LoginRegisterForgotButton" onClick={() => addUser()>SIGN UP</button>
+            {/* <button className="LoginRegisterForgotButton" onClick={() => addUser()>SIGN UP</button> */}
           </div>
           <img
             src={turkuamklogo}

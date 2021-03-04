@@ -4,6 +4,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { BiCalendar } from "react-icons/bi";
 import { Column, Row } from "simple-flexbox";
 import Navbar from "../components/Navbar";
+import { AuthContext } from '../contexts/AuthContext';
+import Axios from 'axios';
 
 const BookingInterface = () => {
   const [date, setDate] = useState(new Date());
@@ -13,6 +15,18 @@ const BookingInterface = () => {
   const [selectedComputer, setSelectedComputer] = useState([]);
   const computer = [];
   const numberOfComputers = 8;
+  
+  const { currentUser } = useContext(AuthContext);
+  
+  const addBooking = () => {
+
+    if (!selectedComputer) return;
+
+    Axios.post("http://localhost:3001/new_booking", {
+      email: currentUser.email,
+      computerName: selectedComputer,
+    });
+  };
 
   const handleSelectTimes = function (selectedItems, mode) {
     const times = [];
@@ -159,7 +173,7 @@ const BookingInterface = () => {
             </div>
           </div>
           <div className="d-flex justify-content-around mt-3 mb-4">
-            <button type="submit" className="btn btn-primary text-white">
+            <button type="submit" className="btn btn-primary text-white" onClick={() => addBooking()}>
               BOOK SELECTION
             </button>
           </div>

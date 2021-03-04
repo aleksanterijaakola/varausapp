@@ -4,7 +4,7 @@ import "../App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import turkuamklogo from "../img/turku_amk.png";
-//import { useAuth } from "../contexts/AuthContext";
+// import { useAuth } from "../contexts/AuthContext";
 import Navbar from '../components/Navbar'
 
 import { faDesktop } from "@fortawesome/free-solid-svg-icons";

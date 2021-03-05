@@ -104,10 +104,6 @@ main > article {
   text-align: center;
 }
 
-.thefirmaimg {
-  text-align: center;
-  justify-content: center;
-}
 
 /*Main Heading for the page*/
 .HeadingForgotPassword {
@@ -754,18 +750,6 @@ input:-webkit-autofill:focus {
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
-  }
-
-  .instagram-icon{
-    font-size: 32px;
-    position: relative;
-    left: -10px;
-  }
-
-  .facebook-icon {
-    font-size: 32px;
-    position: relative;
-    right: -10px;
   }
 
   .nav-menu.active {

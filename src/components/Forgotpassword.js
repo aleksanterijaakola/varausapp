@@ -4,7 +4,7 @@ import { Alert } from "react-bootstrap";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../App.css";
-import thefirmalogo from "../img/thefirma_white.png";
+//import thefirmalogo from "../img/thefirma_white.png";
 // import turkuamklogo from "../img/turku_amk.png";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -36,7 +36,7 @@ const ForgotPassword = () => {
         <header className="thefirmaimg">
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
-          <img src={thefirmalogo} alt="thefirmalogo" height="70px" />
+          {/* <img src={thefirmalogo} alt="thefirmalogo" height="70px" /> */}
           <p className="h4 mb-5 font-weight-normal text-white">
             Booking Computer App
           </p>
@@ -67,7 +67,6 @@ const ForgotPassword = () => {
               isSubmitting,
             }) => (
               <form className="ForgotPasswordForm" onSubmit={handleSubmite}>
-                
                 <input
                   name="email"
                   type="email"
@@ -78,13 +77,15 @@ const ForgotPassword = () => {
                   onBlur={handleBlur}
                   ref={emailRef}
                   required
-                  
                 />
                 {errors.email && touched.email && (
                   <label className="ForgotPassworderrors">{errors.email}</label>
                 )}
 
-                <div className="buttondivison" style={{ display: "flex", marginTop: '30px' }}>
+                <div
+                  className="buttondivison"
+                  style={{ display: "flex", marginTop: "30px" }}
+                >
                   <input
                     className="LoginRegisterForgotButton"
                     type="submit"

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import "../App.css";
 import { useAuth } from "../contexts/AuthContext";
-import thefirmalogo from "../img/thefirma_white.png";
-import turkuamklogo from "../img/turku_amk.png";
+// import thefirmalogo from "../img/thefirma_white.png";
+// import turkuamklogo from "../img/turku_amk.png";
 import { useHistory} from "react-router-dom";
 import Axios from "axios";
 
@@ -50,9 +50,6 @@ const Register = () => {
     }
   }
 
-  /*const repeatEmailValidation = value => (
-    value === email.current.value
-  ) */
 
   return (
     <React.Fragment>
@@ -60,7 +57,7 @@ const Register = () => {
         {error && <alert>{error}</alert>}
         <form className="form-signin" onSubmit={handleSubmit}>
           <img
-            src={thefirmalogo}
+            // src={thefirmalogo}
             alt="thefirmalogo"
             className="mb-1"
             height="70px"
@@ -117,7 +114,7 @@ const Register = () => {
             <button className="LoginRegisterForgotButton" onClick={() => addUser()}>SIGN UP</button>
           </div>
           <img
-            src={turkuamklogo}
+            // src={turkuamklogo}
             alt="turkuamklogo"
             className="mt-5 mb-4"
             height="70px"

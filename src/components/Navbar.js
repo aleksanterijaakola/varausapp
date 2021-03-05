@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-import thefirmalogo from "../img/thefirma_white.png";
+import thefirmalogo from "../Assets/img/thefirma.png"
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -72,20 +72,6 @@ function Navbar() {
                 Logout{" "}
               </Link>
             </li>
-            <div>
-              <a
-                href="https://www.instagram.com/thefirmatuas/?hl=fi"
-                className="instagram-icon"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.facebook.com/thefirmatuas"
-                className="facebook-icon"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-            </div>
           </ul>
         </div>
       </nav>

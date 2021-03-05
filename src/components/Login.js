@@ -1,17 +1,17 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import { Alert } from "react-bootstrap";
-import thefirmalogo from "../img/thefirma_white.png";
-import turkuamklogo from "../img/turku_amk.png";
+import thefirmalogo from "../Assets/img/turkuamk.png"
+import turkuamklogo from "../Assets/img/thefirma.png"
 import { auth } from "../firebase";
 
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, ] = useState("")
- // error message implementation unfinished
+  const [error] = useState("");
+  // TODO: error message implementation unfinished
   const signIn = (e) => {
     e.preventDefault();
 
@@ -26,11 +26,11 @@ const Login = () => {
   return (
     <article className="text-center">
       {/**/}
-       {error && (
+      {error && (
         <Alert className="login-alert" variant="danger">
           {alert}
-        </Alert > 
-      )} 
+        </Alert>
+      )}
       <form className="form-signin" onSubmit={signIn}>
         <img
           src={thefirmalogo}

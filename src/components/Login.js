@@ -34,7 +34,7 @@ const Login = () => {
       <form className="form-signin" onSubmit={signIn}>
         <img
           src={thefirmalogo}
-          alt="thefirmalogo"
+          alt="Responsive image"
           className="mb-1"
           height="70px"
         />

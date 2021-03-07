@@ -12,14 +12,14 @@ app.use(express.json())
 app.use(cors());
 
 
-mongoose.connect("Your MongoDB-link here", {
+mongoose.connect("mongodb+srv://admin:pAZTf297Wg4rxVd@cluster0.m3tzc.mongodb.net/booking_app", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
 
 
-app.listen(3001, () => {
-    console.log("Server running on port 3001");
+app.listen(8080, () => {
+    console.log("Server running on port 8080");
 });
 
 

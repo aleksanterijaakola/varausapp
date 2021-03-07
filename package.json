@@ -16,6 +16,7 @@
     "firebase-admin": "^9.4.2",
     "firebase-functions": "^3.13.1",
     "formik": "^2.2.5",
+    "mongoose": "^5.11.19",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
@@ -39,7 +40,7 @@
     "yup": "^0.29.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"cd back-end && node index.js\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test -coverage",
@@ -64,6 +65,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^6.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.12.1",

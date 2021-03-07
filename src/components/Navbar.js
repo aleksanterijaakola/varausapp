@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-import thefirmalogo from "../Assets/img/thefirma.png"
+import thefirmalogo from "../Assets/img/thefirma.png";
+
+import app from '../firebase';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -21,6 +23,11 @@ function Navbar() {
   useEffect(() => {
     showButton();
   }, []);
+
+  // const handleLogout = () => {
+  //   closeMobileMenu();
+  //   app.auth().signOut();
+  // }
 
   window.addEventListener("resize", showButton);
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import { Alert } from "react-bootstrap";
@@ -6,12 +6,17 @@ import thefirmalogo from "../Assets/img/turkuamk.png"
 import turkuamklogo from "../Assets/img/thefirma.png"
 import { auth } from "../firebase";
 
+import { AuthContext } from "../contexts/AuthContext";
+
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error] = useState("");
   // TODO: error message implementation unfinished
+
+  const { currentUser } = useContext(AuthContext);
+
   const signIn = (e) => {
     e.preventDefault();
 

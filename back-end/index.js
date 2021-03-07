@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors());
 
 
-mongoose.connect("Your MongoDB-link here", {
+mongoose.connect("MongoDB-link", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

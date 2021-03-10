@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactTooltip from 'react-tooltip';
+import ReactTooltip from "react-tooltip";
 import SeatPicker from "react-seat-picker";
 import "../App.css";
 
@@ -7,28 +7,14 @@ export default class App extends Component {
   state = {
     loading: false,
   };
-/* TODO: 
+  /* * TODO: 
 Convert all to functional components
-Max selected is now 3, make it so you can only choose 1
-
+// Max selected is now 3, make it so you can only choose 1
+Remove tooltip for seat.
+Reve 'A,B,C,D' tooltip. 
 
 
 */
-  addSeatCallback = ({ row, number, id }, addCb) => {
-    this.setState(
-      {
-        loading: true,
-      },
-      async () => {
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        console.log(`Added seat ${number}, row ${row}, id ${id}`);
-        const newTooltip = `tooltip for id-${id} added by callback`;
-        addCb(row, number, id, newTooltip);
-        this.setState({ loading: false });
-      }
-    );
-  };
-
   addSeatCallbackContinousCase = (
     { row, number, id },
     addCb,
@@ -49,8 +35,8 @@ Max selected is now 3, make it so you can only choose 1
         }
         await new Promise((resolve) => setTimeout(resolve, 750));
         console.log(`Added seat ${number}, row ${row}, id ${id}`);
-        const newTooltip = `tooltip for id-${id} added by callback`;
-        addCb(row, number, id, newTooltip);
+        //       // const newTooltip = `tooltip for id-${id} added by callback`;
+        addCb(row, number, id);
         this.setState({ loading: false });
       }
     );
@@ -139,15 +125,15 @@ Max selected is now 3, make it so you can only choose 1
     const { loading } = this.state;
     return (
       <div>
-        <div>
-        </div>
+        <div></div>
         <h1>Seat Picker</h1>
-        <div style={{ marginTop: "100px" }}>
+        <h2>Selected {this.props.addSeatCallbackContinousCase}</h2>
+        <div style={{ marginTop: "100px", position: "relative", left: "35px" }}>
           <SeatPicker
             addSeatCallback={this.addSeatCallbackContinousCase}
             removeSeatCallback={this.removeSeatCallback}
             rows={rows}
-            maxReservableSeats={3}
+            maxReservableSeats={1}
             alpha
             visible
             selectedByDefault

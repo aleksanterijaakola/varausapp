@@ -11,7 +11,7 @@ export default class App extends Component {
 Convert all to functional components
 // Max selected is now 3, make it so you can only choose 1
 Remove tooltip for seat.
-Reve 'A,B,C,D' tooltip. 
+Remove 'A,B,C,D' tooltip. 
 
 
 */
@@ -62,7 +62,7 @@ Reve 'A,B,C,D' tooltip.
     const rows = [
       [
         { id: 1, number: 1, isSelected: true, tooltip: "Reserved by you" },
-        { id: 2, number: 2, tooltip: "Cost: 15$" },
+        { id: 2, number: 2},
         null,
         {
           id: 3,

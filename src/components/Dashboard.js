@@ -16,7 +16,7 @@ export default function Dashboard() {
 
   //Gets user's bookings from the db
   useEffect(() => {
-    Axios.get("http://localhost:3001/read_bookings").then((response) => {
+    Axios.get("http://localhost:8080/routes/read_bookings").then((response) => {
       let items = response.data.filter(
         (booking) => booking.userEmail === currentUser.email
       );
@@ -27,7 +27,7 @@ export default function Dashboard() {
   function handleRemove(id) {
     let items = datas.filter((booking) => booking._id !== id);
     setDatas(items);
-    Axios.delete(`http://localhost:3001/delete/${id}`);
+    Axios.delete(`http://localhost:8080/routes/delete/${id}`);
   }
 
   return (

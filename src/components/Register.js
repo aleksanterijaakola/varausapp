@@ -26,7 +26,7 @@ const Register = () => {
       return
     }
     
-    Axios.post("http://localhost:3001/new_user", {
+    Axios.post("http://localhost:8080/routes/register", {
       email: dbEmail,
       password: dbPassword,
     });

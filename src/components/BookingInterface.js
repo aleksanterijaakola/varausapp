@@ -22,7 +22,7 @@ const BookingInterface = () => {
 
     if (!selectedComputer) return;
 
-    Axios.post("http://localhost:3001/new_booking", {
+    Axios.post("http://localhost:8080/routes/new_booking", {
       email: currentUser.email,
       computerName: selectedComputer,
     });

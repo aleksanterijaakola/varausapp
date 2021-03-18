@@ -14,7 +14,7 @@ function SeatSelection() {
     params,
     removeCb
   ) => {
-    this.setState(
+    setState(
      
       async () => {
         if (removeCb) {
@@ -136,3 +136,5 @@ function SeatSelection() {
 }
 
 export default SeatSelection
+
+.gitlab-ci.yml

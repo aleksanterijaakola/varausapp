@@ -763,12 +763,12 @@ input:-webkit-autofill:focus {
   }
 }
 
- * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "PT Sans", sans-serif;
-} 
+}
 
 .home,
 .services,
@@ -786,22 +786,20 @@ input:-webkit-autofill:focus {
   font-size: 24px;
   width: 35px !important;
   height: 40px !important;
-  margin: 0
-  
+  margin: 0;
 }
 
 .seat-picker {
   position: relative;
   left: 0px;
   font-size: 22px;
-
 }
 /* * This is the whole layout of seat selection */
 .seat-content {
   position: relative;
   margin: 0 auto;
   width: 100%;
-  left: -15px
+  left: 20px;
 }
 
 .blank {
@@ -816,11 +814,45 @@ __row {
 }
 
 .seat-picker > *:not(:last-child) {
-  margin: 0
+  margin: 0;
 }
 
+.seat-picker__row__number {
+  /* display: none !important; */
+}
 
-.seat--reserved {
-  
-  
+.seat-picker__row seat-picker__row--enabled {
+  /* display: none !important; */
+}
+
+.seat-picker > seat seat--enabled seat--north > span {
+    display: none; 
+} 
+
+.seat.seat--reserved.seat--north {
+  background-color: #6b8c9b !important;
+  opacity: 0.2;
+}
+
+.seat.seat--reserved.seat--north > seat__number {
+  opacity: 0;
+}
+
+/* .seat__number {
+  opacity: 0.5;
+} */
+
+.seat-picker__row.seat-picker__row--selected {
+  background-color: transparent;
+}
+/* .seat-picker__row.seat-picker__row--enabled {
+  background-color: red !important
+} */
+
+.seat.seat--enabled.seat-north {
+  background-color: transparent;
+}
+
+.loader {
+  display: none !important
 }

@@ -30,7 +30,7 @@ const Login = () => {
 
   return (
     <>
-      <div class="w-full max-w-xs relative object-center">
+      <div class="w-full max-w-xs container relative top-40">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" onSubmit={signIn}>
           <div class="mb-4">
             <label
@@ -73,6 +73,13 @@ const Login = () => {
               onClick={() => history.push("/dashboard")}
             >
               Sign In
+            </button>
+            <button
+              class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              type="button"
+              onClick={() => history.push("/dashboard")}
+            >
+              Register
             </button>
             <a
               class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"

@@ -22,7 +22,7 @@ export default function Dashboard() {
       );
       setDatas(items);
     });
-  },);
+  });
 
   function handleRemove(id) {
     let items = datas.filter((booking) => booking._id !== id);
@@ -32,9 +32,8 @@ export default function Dashboard() {
 
   return (
     <React.Fragment>
+      <Navbar />
       <main style={{ paddingTop: 0 }}>
-        <Navbar />
-
         <div>
           <p style={{ fontSize: 20 }}>Select Date</p>
           <DatePicker
@@ -96,7 +95,6 @@ export default function Dashboard() {
         ))}
         {/* </article> */}
         <footer>
-          <hr style={{ marginLeft: "30%", marginRight: "30%" }} />
           <img
             className="imgfirma"
             // src={turkuamklogo}

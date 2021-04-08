@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.1.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
@@ -46,9 +47,9 @@
     "yup": "^0.29.3"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"cd back-end && node index.js\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "test:coverage": "react-scripts test -coverage",
     "eject": "react-scripts eject"
   },
@@ -71,12 +72,16 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.1.0",
+    "autoprefixer": "^9.8.6",
     "concurrently": "^6.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.12.1",
+    "postcss": "^7.0.35",
     "react-hook-form": "^6.11.2",
     "react-test-renderer": "^17.0.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0",
     "workbox-cli": "^6.0.2"
   }
 }

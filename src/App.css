@@ -12,7 +12,7 @@ root {
   height: 100%;
 }
 
-.login-page article {
+/* .login-page article {
   height: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -679,7 +679,7 @@ input:-webkit-autofill:focus {
   position: relative;
   right: -18px;
   top: 20px;
-}
+} */
 
 @media screen and (max-width: 960px) {
   .NavbarItems {

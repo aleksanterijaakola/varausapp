@@ -4,7 +4,7 @@ import thefirmalogo from "../Assets/img/turkuamk.png";
 import turkuamklogo from "../Assets/img/thefirma.png";
 import { auth } from "../firebase";
 import "../styles/tailwind.css";
-import { AuthContext } from "../contexts/AuthContext";
+// import { AuthContext } from "../contexts/AuthContext";
 
 const Login = () => {
   const history = useHistory();
@@ -13,7 +13,8 @@ const Login = () => {
   const [error] = useState(""); 
 
 
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
+  // if you want it to use email you can use currentUser.email
 
   const signIn = (e) => {
     e.preventDefault();
@@ -31,6 +32,7 @@ const Login = () => {
       <div class="w-6/12 container relative top-20" >
         <img class="" src={turkuamklogo} alt=""></img>
       </div>
+      
       <div class="w-full max-w-xs container relative top-28">
         <form
           class="bg-white bg-opacity-30 shadow-sm rounded px-8 pt-6 pb-8 mb-4"
@@ -44,7 +46,7 @@ const Login = () => {
               Username
             </label>
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none "
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
               id="email"
               type="text"
               required

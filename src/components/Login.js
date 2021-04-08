@@ -10,7 +10,7 @@ const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error] = useState(""); 
+  // const [error] = useState(""); This is for error.message implementation
 
 
   // const { currentUser } = useContext(AuthContext);

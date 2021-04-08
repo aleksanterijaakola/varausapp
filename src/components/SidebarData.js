@@ -2,6 +2,7 @@ import React from 'react';
 import * as CgIcons from "react-icons/cg";
 import * as AiIcons from "react-icons/ai";
 import * as BsIcons from "react-icons/bs";
+import * as FiIcons from "react-icons/fi";
 
 export const SidebarData = [
     {
@@ -20,6 +21,12 @@ export const SidebarData = [
         title: 'Profile',
         path: '/',
         icon: <CgIcons.CgProfile />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Settings',
+        path: '/',
+        icon: <FiIcons.FiSettings />,
         cName: 'nav-text'
     }
 ]

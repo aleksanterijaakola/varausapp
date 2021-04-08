@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body {
   background: linear-gradient(180deg, #f89291 0%, #28d6c0 100%);
-  color: white;
+  color: black;
   background-attachment: fixed;
   height: 100%;
 }
@@ -176,66 +176,6 @@ main > article {
   text-align: center;
 }
 
-/*styling of error messages in forgot password screen*/
-.ForgotPassworderrors {
-  margin-bottom: 1%;
-  padding-bottom: 10px;
-  color: red;
-  font-weight: 600;
-  left: 0%;
-}
-
-/*Forgotpassword footer css*/
-/* main > footer {
-  text-align: center;
-  justify-content: center;
-} */
-
-
-
-.nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active {
-  color: white;
-  background-color: transparent;
-  border-color: transparent transparent #f3f3f3;
-  border-bottom: 3px solid !important;
-  font-size: 16px;
-  font-weight: bold;
-}
-.nav-link {
-  border: 1px solid transparent;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-}
-thead {
-  background: #f3f3f3;
-  color: #333;
-}
-ol {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
-
-/* .book-page article {
-  height: 90vh;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  flex-direction: column;
-} */
-/*navigation bar styling*/
-.headernav {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
 .headernavtag {
   background-color: #0082e6;
   height: 80px;
@@ -298,22 +238,8 @@ ol {
   color: #333;
 }
 
-@media (max-width: 900px) {
-  .labelfirmaimg > .firmaimg {
-    height: 30px;
-    padding: 0 50px 0 50px;
-  }
-  .navdivisionlist > .navdivisionlistitem {
-    font-size: 15px;
-  }
-}
 
-@media (max-width: 300px) {
-  .labelfirmaimg > .firmaimg {
-    height: 30px;
-    padding: 0 30px 0 30px;
-  }
-}
+
 
 @media (max-width: 750px) {
   .navicon {
@@ -371,7 +297,7 @@ ol {
 }
 
 /*styling on autofill of the email column*/
-input:-webkit-autofill {
+/* input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px rgba(248, 147, 145, 1) inset !important;
   box-shadow: 0 0 0 30px rgba(248, 146, 145, 0.9) inset !important;
   border-color: rgba(248, 146, 145, 0.5) !important;
@@ -382,14 +308,9 @@ input:-webkit-autofill:focus {
   box-shadow: 0 0 0 30px rgba(248, 146, 145, 0.9) inset !important;
   border-color: rgba(248, 146, 145, 0.5) !important;
   -webkit-text-fill-color: black;
-}
+} */
 
-.react-datepicker__input-container,
-.datepickerclass {
-  width: 100px;
-  z-index: 0 !important;
-  display: none
-}
+
 
 /*styling article and the foote(dashboard)*/
  .Headingtop {

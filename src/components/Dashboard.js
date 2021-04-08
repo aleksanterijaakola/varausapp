@@ -36,14 +36,14 @@ export default function Dashboard() {
       <main style={{ paddingTop: 0 }}>
         <div>
           <p style={{ fontSize: 20 }}>Select Date</p>
-          <DatePicker
+          {/* <DatePicker
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             filterDate={(date) => date.getDay() !== 6 && date.getDay() !== 0}
             className="datepickerclass"
             id="datepicker"
             minDate={new Date()}
-          />
+          /> */}
         </div>
 
         {datas.map((data, key) => (

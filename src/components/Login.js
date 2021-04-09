@@ -12,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   // const [error] = useState(""); This is for error.message implementation
 
-
   // const { currentUser } = useContext(AuthContext);
   // if you want it to use email you can use currentUser.email
 
@@ -29,10 +28,10 @@ const Login = () => {
 
   return (
     <>
-      <div class="w-6/12 container relative top-20" >
+      <div class="w-6/12 container relative top-20">
         <img class="" src={turkuamklogo} alt=""></img>
       </div>
-      
+
       <div class="w-full max-w-xs container relative top-28">
         <form
           class="bg-white bg-opacity-30 shadow-sm rounded px-8 pt-6 pb-8 mb-4"
@@ -80,8 +79,16 @@ const Login = () => {
             >
               Sign In
             </button>
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
+          <div>
             <a
-              class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+              class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 relative top-3 container"
               href="/forgotpassword"
             >
               Forgot Password?

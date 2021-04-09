@@ -47,7 +47,7 @@
     "yup": "^0.29.3"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "concurrently \"craco start\" \"cd back-end && node index.js\"",
     "build": "craco build",
     "test": "craco test",
     "test:coverage": "react-scripts test -coverage",

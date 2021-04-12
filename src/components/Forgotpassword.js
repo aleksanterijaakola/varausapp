@@ -1,118 +1,58 @@
-import React, { useRef, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Alert } from "react-bootstrap";
-import { Formik } from "formik";
-import * as Yup from "yup";
-import "../App.css";
-//import thefirmalogo from "../img/thefirma_white.png";
-// import turkuamklogo from "../img/turku_amk.png";
-import { useAuth } from "../contexts/AuthContext";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "../styles/tailwind.css";
+import { auth } from "../firebase";
 
-const ForgotPassword = () => {
-  const history = useHistory();
-  const emailRef = useRef();
-  const { resetPassword } = useAuth();
-  const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+function Forgotpassword() {
+  const [email, setEmail] = useState("");
 
-  async function handleSubmite(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      setMessage("");
-      setError("");
-      //setLoading(true);
-      await resetPassword(emailRef.current.value);
-      setMessage("Check your inbox for further instructions");
-    } catch {
-      setError("Email does not exist");
-    }
-    //setLoading(false);
-  }
+    auth
+      .sendPasswordResetEmail(email)
+
+      .catch((error) => alert(error.message));
+  };
 
   return (
-    <React.Fragment>
-      <main>
-        <header className="thefirmaimg">
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-          {/* <img src={thefirmalogo} alt="thefirmalogo" height="70px" /> */}
-          <p className="h4 mb-5 font-weight-normal text-white">
-            Booking Computer App
+    <>
+      <div class="text-center pt-6">
+        <h1 class="font-black text-xl">Reset password</h1>
+        <div class="pt-6">
+          <p class="pb-12">
+            Enter the email associated with your account and we'll send an email
+            with instructions to reset the password.
           </p>
-        </header>
-        <article style={{ paddingTop: 0, paddingBottom: 0 }}>
-          <p className="HeadingForgotPassword">Forgot Password?</p>
-
-          <Formik
-            handleSubmit
-            initialValues={{ email: "" }}
-            onSubmit={(values, { setSubmitting }) => {
-              setTimeout(() => {
-                console.log(values);
-                setSubmitting(false);
-              }, 500);
-            }}
-            validationSchema={Yup.object().shape({
-              email: Yup.string().email().required("Required"),
-            })}
-          >
-            {({
-              handleChange,
-              values,
-              handleSubmit,
-              errors,
-              touched,
-              handleBlur,
-              isSubmitting,
-            }) => (
-              <form className="ForgotPasswordForm" onSubmit={handleSubmite}>
-                <input
-                  name="email"
-                  type="email"
-                  className="InputboxEmail"
-                  placeholder="E-MAIL"
-                  value={values.email}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  ref={emailRef}
-                  required
-                />
-                {errors.email && touched.email && (
-                  <label className="ForgotPassworderrors">{errors.email}</label>
-                )}
-
-                <div
-                  className="buttondivison"
-                  style={{ display: "flex", marginTop: "30px" }}
-                >
-                  <input
-                    className="LoginRegisterForgotButton"
-                    type="submit"
-                    value="SEND"
-                    disabled={isSubmitting}
-                    style={{ marginRight: "2px" }}
-                  />
-                  <button
-                    className="LoginRegisterForgotButton"
-                    type="button"
-                    value="Login"
-                    onClick={() => history.push("/login")}
-                  >
-                    LOGIN
-                  </button>
-                </div>
-              </form>
-            )}
-          </Formik>
-        </article>
-
-        <footer>
-          <img src="" alt="" className="mt-5 mb-4" height="70px" />
-        </footer>
-      </main>
-    </React.Fragment>
+        </div>
+        <form
+          class="bg-opacity-30 shadow-sm rounded px-8 pt-6 pb-8 mb-4"
+          onSubmit={handleSubmit}
+        >
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+            id="email"
+            type="text"
+            required
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <div class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 relative top-3 container">
+            <Link to="/login">Login?</Link>
+          </div>
+          <div class="flex items-center justify-between mt-2">
+            <button
+              class="relative top-5 left-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded focus:outline-none focus:shadow-outline "
+              type="submit"
+            >
+              Send instructions
+            </button>
+          </div>
+        </form>
+      </div>
+    </>
   );
-};
+}
 
-export default ForgotPassword;
+export default Forgotpassword;

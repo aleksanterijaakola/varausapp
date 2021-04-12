@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
+import Navbar from "../components/Navbar";
 
 import SeatPicker from "react-seat-picker";
 
@@ -157,7 +158,9 @@ export default class App extends Component {
     // const { loading } = this.state;
 
     return (
+      
       <div>
+        <Navbar />
         <div></div>
         <h1>Seat Picker</h1>
         <div style={{ marginTop: "100px", position: "relative", left: "35px" }}>

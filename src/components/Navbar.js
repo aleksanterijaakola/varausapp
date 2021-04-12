@@ -1,87 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
-import thefirmalogo from "../Assets/img/thefirma.png";
-
-import app from '../firebase';
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import { SidebarData } from "./SidebarData";
+import { IconContext } from "react-icons";
 
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const [, setButton] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(true);
-    } else {
-      setButton(false);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  // const handleLogout = () => {
-  //   closeMobileMenu();
-  //   app.auth().signOut();
-  // }
-
-  window.addEventListener("resize", showButton);
+  const showSidebar = () => setSidebar(!sidebar);
   return (
     <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link
-            to="/dashboard "
-            className="navbar-logo"
-            onClick={closeMobileMenu}
-          ></Link>
-          <div>
-            <Link to="/dashboard">
-              <img
-                className="imgfirma"
-                src={thefirmalogo}
-                alt=""
-                style={{ height: 50 }}
-              />
-            </Link>
-          </div>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
-          </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link
-                to="/dashboard"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                {" "}
-                Dashboard{" "}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/reserve"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                {" "}
-                Bookings{" "}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login" className="nav-links" onClick={closeMobileMenu}>
-                {" "}
-                Logout{" "}
-              </Link>
-            </li>
-          </ul>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
         </div>
-      </nav>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items" onClick={showSidebar}>
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </li>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </IconContext.Provider>
     </>
   );
 }

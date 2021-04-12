@@ -5,8 +5,9 @@ import Dashboard from "./Dashboard";
 import Register from "./Register";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./Forgotpassword";
-import  BookingInterface from './BookingInterface'
-import SeatSelection from './SeatSelection'
+import BookingInterface from "./BookingInterface";
+import SeatSelection from "./SeatSelection";
+import Bookings from "./Booking";
 import { AuthProvider } from "../contexts/AuthContext";
 
 function App() {
@@ -15,10 +16,11 @@ function App() {
       <AuthProvider>
         <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path='/reserve' component={BookingInterface} />
+          <PrivateRoute exact path="/reserve" component={BookingInterface} />
+          <PrivateRoute exact path="/testi" component={Bookings} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
-          <Route path= "/seat" component={SeatSelection} />
+          <Route path="/seat" component={SeatSelection} />
           <Route path="/" component={Login} />
         </Switch>
       </AuthProvider>
@@ -27,4 +29,3 @@ function App() {
 }
 
 export default App;
-

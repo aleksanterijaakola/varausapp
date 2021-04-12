@@ -1,8 +1,8 @@
 /*main body styling */
-
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body {
   background: linear-gradient(180deg, #f89291 0%, #28d6c0 100%);
-  color: white;
+  color: black;
   background-attachment: fixed;
   height: 100%;
 }
@@ -176,78 +176,6 @@ main > article {
   text-align: center;
 }
 
-/*styling of error messages in forgot password screen*/
-.ForgotPassworderrors {
-  margin-bottom: 1%;
-  padding-bottom: 10px;
-  color: red;
-  font-weight: 600;
-  left: 0%;
-}
-
-/*Forgotpassword footer css*/
-main > footer {
-  text-align: center;
-  justify-content: center;
-}
-
-/*styling telling weather the reset email was successfully send or not*/
-.alert {
-  width: 300px;
-  margin-left: 40px;
-  position: relative;
-  top: 450px;
-}
-
-.login-alert {
-  width: 300px;
-  position: relative;
-  top: 44px;
-}
-
-.nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active {
-  color: white;
-  background-color: transparent;
-  border-color: transparent transparent #f3f3f3;
-  border-bottom: 3px solid !important;
-  font-size: 16px;
-  font-weight: bold;
-}
-.nav-link {
-  border: 1px solid transparent;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-}
-thead {
-  background: #f3f3f3;
-  color: #333;
-}
-ol {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
-
-.book-page article {
-  height: 90vh;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  flex-direction: column;
-}
-/*navigation bar styling*/
-.headernav {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
 .headernavtag {
   background-color: #0082e6;
   height: 80px;
@@ -310,22 +238,8 @@ ol {
   color: #333;
 }
 
-@media (max-width: 900px) {
-  .labelfirmaimg > .firmaimg {
-    height: 30px;
-    padding: 0 50px 0 50px;
-  }
-  .navdivisionlist > .navdivisionlistitem {
-    font-size: 15px;
-  }
-}
 
-@media (max-width: 300px) {
-  .labelfirmaimg > .firmaimg {
-    height: 30px;
-    padding: 0 30px 0 30px;
-  }
-}
+
 
 @media (max-width: 750px) {
   .navicon {
@@ -383,7 +297,7 @@ ol {
 }
 
 /*styling on autofill of the email column*/
-input:-webkit-autofill {
+/* input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px rgba(248, 147, 145, 1) inset !important;
   box-shadow: 0 0 0 30px rgba(248, 146, 145, 0.9) inset !important;
   border-color: rgba(248, 146, 145, 0.5) !important;
@@ -394,16 +308,12 @@ input:-webkit-autofill:focus {
   box-shadow: 0 0 0 30px rgba(248, 146, 145, 0.9) inset !important;
   border-color: rgba(248, 146, 145, 0.5) !important;
   -webkit-text-fill-color: black;
-}
+} */
 
-.react-datepicker__input-container,
-.datepickerclass {
-  width: 100px;
-  z-index: 0 !important;
-}
+
 
 /*styling article and the foote(dashboard)*/
-.Headingtop {
+ .Headingtop {
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
     0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
@@ -413,64 +323,9 @@ input:-webkit-autofill:focus {
   font-size: 40px;
   color: white;
   margin-bottom: 50px;
-}
+} 
 
-/*adjust booking colunms main div with the change in screen size and other css*/
 
-.divforbookingslots {
-  margin-left: 38%;
-  padding: 20px 30px 20px 30px;
-  align-content: center;
-  justify-content: center;
-}
-
-@media (max-width: 1100px) {
-  .divforbookingslots {
-    margin-left: 33%;
-  }
-}
-
-@media (max-width: 900px) {
-  .divforbookingslots {
-    margin-left: 30%;
-  }
-}
-
-@media (max-width: 700px) {
-  .divforbookingslots {
-    margin-left: 24%;
-  }
-}
-
-@media (max-width: 600px) {
-  .divforbookingslots {
-    margin-left: 20%;
-  }
-}
-
-@media (max-width: 500px) {
-  .divforbookingslots {
-    margin-left: 15%;
-  }
-}
-
-@media (max-width: 450px) {
-  .divforbookingslots {
-    margin-left: 8%;
-  }
-}
-
-@media (max-width: 450px) {
-  .divforbookingslots {
-    margin-left: 0%;
-  }
-}
-
-@media (max-width: 400px) {
-  .divforbookingslots {
-    padding-left: 4px;
-  }
-}
 
 /*div for individal individual booking*/
 .divforbookingslots > .individual_booking_container {
@@ -492,7 +347,7 @@ input:-webkit-autofill:focus {
 }
 
 /*div for individal individual booking,(date container)*/
-.divforbookingslots
+ .divforbookingslots
   > .individual_booking_container
   > .time_cancel_date_container
   > .date_container {
@@ -500,7 +355,7 @@ input:-webkit-autofill:focus {
   text-align: left;
   border: 0.5px grey solid;
   margin-left: 5px;
-}
+} 
 
 /*div for individal individual booking,(on right of date)*/
 .divforbookingslots
@@ -511,14 +366,14 @@ input:-webkit-autofill:focus {
 }
 
 /*div for individal individual booking,( time container)*/
-.divforbookingslots
+ .divforbookingslots
   > .individual_booking_container
   > .time_cancel_date_container
   > .time_container {
   display: inline;
   text-align: left;
   border: 0.5px grey solid;
-}
+} 
 
 /*cancel button css, which will cancel the booking*/
 
@@ -590,195 +445,88 @@ input:-webkit-autofill:focus {
 /* ************************** NAVBAR Desktop & Mobile ***********************************/
 
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background-color: #060b26; 
   height: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  max-width: 1500px;
-}
-
-.navbar-logo {
-  color: #fff;
-  justify-self: start;
-  margin-left: -10px;
-  margin-top: -10px;
-  cursor: pointer;
-  text-decoration: none;
+.menu-bars {
+  margin-left: 2rem;
   font-size: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-.fa-typo3 {
-  margin-left: 0.5rem;
-  font-size: 1.8rem;
+  background: none
 }
 
 .nav-menu {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 60vw;
-  justify-content: end;
-  margin-right: 2rem;
-}
-
-.nav-item {
-  height: 80px;
-}
-
-.nav-links {
-  color: rgb(241, 238, 238);
+  background-color: #060b26; 
+  width: 250px;
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+
+}
+
+.nav-text {
+  display: flex;
+  justify-content: start;
   align-items: center;
+  padding: 8 0 8 16; 
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
   text-decoration: none;
-  padding: 1.5rem 1rem;
+  color: #f5f5f5;
+  font-size: 18px;
+  width: 95%;
   height: 100%;
+  display: flex;
+  align-items: centeR;
+  padding: 0px 16px;
+  border-radius: 4px;
+
 }
 
-.nav-links:hover {
-  border-bottom: 4px solid #fff;
-  transition: all 0.2s ease-out;
+.nav-menu-items {
+  width: 100%;
 }
 
-.fa-bars {
-  color: #fff;
+.navbar-toggle {
+  background-color: #060b26;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-links-mobile {
-  display: none;
-}
-
-.menu-icon {
-  display: none;
-}
-
-.instagram-icon {
-  font-size: 26px;
-  position: relative;
-  left: 0px;
-  top: 20px;
-}
-
-.facebook-icon {
-  font-size: 26px;
-  position: relative;
-  right: -18px;
-  top: 20px;
-} */
-
-@media screen and (max-width: 960px) {
-  .NavbarItems {
-    position: relative;
-  }
-
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 90vh;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-  }
-
-  .nav-menu.active {
-    background: #242222;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
-
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 100%;
-    display: table;
-  }
-
-  .nav-links:hover {
-    background-color: #fff;
-    color: #242424;
-    border-radius: 0;
-  }
-
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: -30px;
-    transform: translate(25%, 50%);
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
-  }
-
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    margin: 2rem auto;
-    border-radius: 4px;
-    width: 80%;
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: #fff;
-    padding: 14px 20px;
-    border: 1px solid #fff;
-    transition: all 0.3s ease-out;
-  }
-
-  .nav-links-mobile:hover {
-    background: #fff;
-    color: #242424;
-    transition: 250ms;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "PT Sans", sans-serif;
+span {
+  margin-left: 16px;
 }
 
 .home,
-.services,
-.products {
+.bookings,
+.profile {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
+
+
+
 
 /* -----------------------------------------SEAT SELECTION LAYOUT-----------------------------------------------------*/
 /* */

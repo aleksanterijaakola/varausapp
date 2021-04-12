@@ -1,25 +1,28 @@
 module.exports = {
   theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
-       sans: [
+      sans: [
         '"Source Sans Pro"',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
         '"Segoe UI"',
-        'Roboto',
+        "Roboto",
         '"Helvetica Neue"',
-        'Arial',
+        "Arial",
         '"Noto Sans"',
-        'sans-serif',
+        "sans-serif",
         '"Apple Color Emoji"',
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
-      ]
+      ],
     },
     extend: {},
   },
   variants: {},
   plugins: [],
-}
+};

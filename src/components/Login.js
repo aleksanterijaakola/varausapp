@@ -4,6 +4,7 @@ import thefirmalogo from "../Assets/img/turkuamk.png";
 import turkuamklogo from "../Assets/img/thefirma.png";
 import { auth } from "../firebase";
 import "../styles/tailwind.css";
+
 // import { AuthContext } from "../contexts/AuthContext";
 
 const Login = () => {

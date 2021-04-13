@@ -12,95 +12,6 @@ root {
   height: 100%;
 }
 
-/* .login-page article {
-  height: 100%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-.mb-1 {
-  position: relative;
-  top: 500px;
-}
-
-.mt-5 {
-  position: relative;
-  top: -500px;
-}
-.form-signin {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
-}
-.form-signin .checkbox {
-  font-weight: 400;
-}
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
-  background-color: rgba(248, 146, 145, 0.4);
-  border-color: rgba(248, 146, 145, 0.5);
-  color: black !important;
-}
-.form-signin .form-control::placeholder {
-  color: white;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 35px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-/*Styling for the buttons in login Register Forgotpassword Button, there is also some inline css on button elements*/
-
-.LoginRegisterForgotButton {
-  width: 146px;
-  height: 40px;
-  font-size: 20px;
-
-  margin-top: 20px;
-
-  background-color: #008cba;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  border: none;
-  display: block;
-}
-
-.LoginRegisterForgotButton:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-.LoginRegisterForgotButton:focus {
-  outline: none;
-  z-index: 2;
-}
-.LoginRegisterForgotButton:active {
-  color: green;
-}
-
-/* ForgotPassword Page*/
-
-/*body aligning to center */
-
 main {
   margin-right: auto;
   margin-left: auto;
@@ -111,61 +22,6 @@ main {
 main > article {
   justify-content: center;
   text-align: center;
-}
-
-/*Main Heading for the page*/
-.HeadingForgotPassword {
-  font-size: 2rem;
-  margin-top: 0%;
-  color: white;
-  top: 40px;
-}
-
-.Textupperinput {
-  font-size: 30px;
-  margin-bottom: 3em;
-}
-
-.HeaderText {
-  width: 80%;
-  font-size: 40px;
-  padding-left: 5%;
-  background-color: #008cba;
-  color: white;
-}
-
-/*for input field in forgotpassword screen*/
-.InputboxEmail {
-  width: 300px;
-  height: 40px;
-  border: none;
-  border-bottom: 1px black solid;
-
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  font-size: 16px;
-  background-color: rgba(248, 146, 145, 0.4);
-  border-color: rgba(248, 146, 145, 0.5);
-}
-
-.InputboxEmail:focus {
-  outline: none;
-}
-
-/*placeholder styling*/
-.InputboxEmail::-webkit-input-placeholder {
-  /* Edge */
-  color: white;
-}
-
-.InputboxEmail:-ms-input-placeholder {
-  /* Internet Explorer */
-  color: white;
-}
-
-.InputboxEmail::placeholder {
-  color: white;
 }
 
 /*division between buttons*/
@@ -441,15 +297,28 @@ input:-webkit-autofill:focus {
 .cancel_button_main_container:hover .cancel_button_first_child_container:after {
   bottom: 0;
 }
+/* ************************** DATEPICKER ***********************************/
 
+.react-datepicker__input-container {
+  text-align: center;
+}
+
+.pikeri {
+  margin: auto;
+  width: 50%;
+  position: relative;
+  top: 80px
+}
 /* ************************** NAVBAR Desktop & Mobile ***********************************/
 
 .navbar {
   background-color: #060b26; 
   height: 80px;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
+ 
+ 
 }
 
 .menu-bars {
@@ -464,15 +333,17 @@ input:-webkit-autofill:focus {
   height: 100vh;
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: -100%;
   transition: 850ms;
+  z-index: 9999;
 }
 
 .nav-menu.active {
   left: 0;
   transition: 350ms;
+  
 
 }
 
@@ -500,6 +371,8 @@ input:-webkit-autofill:focus {
 
 .nav-menu-items {
   width: 100%;
+ 
+
 }
 
 .navbar-toggle {
@@ -548,6 +421,7 @@ span {
   margin: 0 auto;
   width: 100%;
   left: 20px;
+ 
 }
 
 .blank {

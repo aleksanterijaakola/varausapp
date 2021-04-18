@@ -22,7 +22,7 @@ export default function Dashboard() {
       );
       setDatas(items);
     });
-  });
+  }[currentUser]);
 
   function handleRemove(id) {
     let items = datas.filter((booking) => booking._id !== id);

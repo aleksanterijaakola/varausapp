@@ -34,7 +34,7 @@ const Alert = ({ color }) => {
 export default function ClosingAlert() {
   return (
     <>
-      return <Alert color="red" />;
+      <Alert color="red" />
     </>
   );
 }

@@ -8,6 +8,7 @@ import ForgotPassword from "./Forgotpassword";
 import BookingInterface from "./BookingInterface";
 import SeatSelection from "./SeatSelection";
 import Datepicker from "./Datepicker";
+import Alert from "./Alert";
 import { AuthProvider } from "../contexts/AuthContext";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
           <Route path="/seat" component={SeatSelection} />
+          <Route path="/alert" component={Alert} />
           <Route path="/" component={Login} />
         </Switch>
       </AuthProvider>

@@ -1,9 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../App.css";
 import { useAuth } from "../contexts/AuthContext";
-import thefirmalogo from "../Assets/img/turkuamk.png"
-import turkuamklogo from "../Assets/img/thefirma.png"
-import { useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Axios from "axios";
 
 const Register = () => {
@@ -13,19 +11,23 @@ const Register = () => {
   const repeatEmail = useRef();
   const password = useRef();
   const [error, setError] = useState("");
-  
-  //States for Database
-  const [dbEmail, setDbEmail] = useState('');
-  const [dbRepeatEmail, setDbRepeatEmail] = useState(''); 
-  const [dbPassword, setDbPassword] = useState('');
-  
-  const addUser = () => {
 
+  //States for Database
+  const [dbEmail, setDbEmail] = useState("");
+  const [dbRepeatEmail, setDbRepeatEmail] = useState("");
+  const [dbPassword, setDbPassword] = useState("");
+
+  const addUser = () => {
     //Checks if fields are incorrectly filled
-    if (!dbEmail || !dbRepeatEmail || !dbPassword || dbEmail !== dbRepeatEmail) {
-      return
+    if (
+      !dbEmail ||
+      !dbRepeatEmail ||
+      !dbPassword ||
+      dbEmail !== dbRepeatEmail
+    ) {
+      return;
     }
-    
+
     Axios.post("http://localhost:8080/routes/register", {
       email: dbEmail,
       password: dbPassword,
@@ -50,79 +52,57 @@ const Register = () => {
     }
   }
 
-
   return (
-    <React.Fragment>
-      <article className="text-center">
-        {error && <alert>{error}</alert>}
-        <form className="form-signin" onSubmit={handleSubmit}>
-          <img
-            src={thefirmalogo}
-            alt="thefirmalogo"
-            className="mb-1"
-            height="70px"
-          />
-          <h1 className="h4 mb-5 font-weight-normal text-white">
-            Booking Computer App
-          </h1>
-          <h2 className="h5 mb-3 font-weight-normal text-white text-left">
-            Register
-          </h2>
-          <label htmlFor="inputMail" className="sr-only">
-            Email Address
-          </label>
-          <input
-            type="email"
-            ref={email}
-            required
-            name="email"
-            placeholder="E-MAIL"
-            className="form-control shadow-none"
-            onChange={(e) => setDbEmail(e.target.value)}
-          />
-          <label htmlFor="inputMail" className="sr-only">
-            Email Address
-          </label>
-          <input
-            type="email"
-            ref={repeatEmail}
-            required
-            name="repeatEmail"
-            placeholder="REPEAT E-MAIL"
-            className="form-control mt-3 shadow-none"
-            onChange={(e) => setDbRepeatEmail(e.target.value)}
-          />
-          <label htmlFor="inputPassword" className="sr-only">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            ref={password}
-            placeholder="PASSWORD"
-            required
-            className="form-control mt-3 shadow-none"
-            onChange={(e) => setDbPassword(e.target.value)}
-          />
-          <div className="d-flex justify-content-around mt-3 mb-4">
+    <>
+      <div class="bg-grey-lighter min-h-screen flex flex-col">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+          <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+            <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+
+            <input
+              type="text"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="email"
+              placeholder="Email"
+            />
+
+            <input
+              type="password"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="password"
+              placeholder="Password"
+            />
+            <input
+              type="password"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="confirm_password"
+              placeholder="Confirm Password"
+            />
+
             <button
-              onClick={() => history.push("/login")}
-              className="LoginRegisterForgotButton"
+              type="submit"
+              class="w-full bg-blue-500 text-center py-3 rounded text-white hover:bg-green-dark focus:outline-none my-1"
             >
-              LOGIN
+              Create Account
             </button>
-            <button className="LoginRegisterForgotButton" onClick={() => addUser()}>SIGN UP</button>
+
+            <div class="text-center text-sm text-grey-dark mt-4"></div>
           </div>
-          <img
-            src={turkuamklogo}
-            alt="turkuamklogo"
-            className="mt-5 mb-4"
-            height="70px"
-          />                               
-        </form>
-      </article>
-    </React.Fragment>
+
+          <div class="text-grey-dark mt-6">
+            Already have an account?
+            <a
+              class="no-underline border-b border-blue text-blue"
+              href="../login/"
+            >
+              Log in
+            </a>
+            .
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default Register
+export default Register;

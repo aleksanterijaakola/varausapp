@@ -16,6 +16,14 @@ const Login = () => {
   // const { currentUser } = useContext(AuthContext);
   // if you want it to use email you can use currentUser.email
 
+  const signUp = () => {
+    history.push("/register");
+  };
+
+  const forgotPassword = () => {
+    history.push("/forgotpassword");
+  };
+
   const signIn = (e) => {
     e.preventDefault();
 
@@ -35,7 +43,10 @@ const Login = () => {
 
       <div class="bg-grey-lighter min-h-screen flex flex-col">
         <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-          <form class="bg-white bg-opacity-30 px-6 py-8 rounded shadow-md text-black w-full">
+          <form
+            class="bg-white bg-opacity-30 px-6 py-8 rounded shadow-md text-black w-full mb-8"
+            onSubmit={signIn}
+          >
             <h1 class="mb-8 text-3xl text-center">Login</h1>
 
             <input
@@ -43,6 +54,8 @@ const Login = () => {
               class="block border border-grey-light w-full p-3 rounded mb-4"
               name="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             <input
@@ -50,37 +63,37 @@ const Login = () => {
               class="block border border-grey-light w-full p-3 rounded mb-4"
               name="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <div class="flex justify-center">
               <button
                 type="submit"
-                class="w-3/4 bg-blue-500 text-center py-3 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+                class="w-full bg-blue-500 text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
               >
                 Login
               </button>
+            </div>
+            <div class="w-full border border-gray-900 border-opacity-20 mt-2"></div>
+            <div class="mt-2">
               <button
                 type="submit"
-                class="w-3/4 bg-blue-500 text-center  m-2 py-3 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+                class="w-full border text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+                onClick={signUp}
               >
-                Signup
+                Register
               </button>
             </div>
-
             <div class="text-center text-sm text-grey-dark mt-4"></div>
-            <div class="text-grey-dark mt-6">
-              Forgot password?
-              <a
-                class="no-underline border-b border-blue text-blue"
-                href="/forgotpassword/"
-              >
-                {" "}
-              </a>
+            <div class="ml-1 text-blue-500">
+              <button class="font-black" onClick={forgotPassword}>
+                Forgot password?
+              </button>
             </div>
           </form>
-          <p class="text-center text-gray-500 text-xs">
-          &copy;2021 theFIRMA. All rights reserved.
-        </p>
-
+          <div class="w-6/12 container">
+            <img src={thefirmalogo} alt=""></img>
+          </div>
         </div>
       </div>
     </>

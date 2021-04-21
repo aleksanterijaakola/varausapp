@@ -34,6 +34,10 @@ const Register = () => {
     });
   };
 
+  const login = () => {
+    history.push("/login");
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
     // console.log(email.current.value)
@@ -97,17 +101,15 @@ const Register = () => {
             </button>
 
             <div class="text-center text-sm text-grey-dark mt-4"></div>
-          </div>
-
-          <div class="text-grey-dark mt-6">
-            Already have an account?
-            <a
-              class="no-underline border-b border-blue text-blue"
-              href="../login/"
-            >
-              Log in
-            </a>
-            .
+            <div class="text-grey-dark ml-1">
+              Already have an account?{" "}
+              <button
+                class="text-blue-500"
+                onClick={login}
+              >
+                Log in
+              </button>
+            </div>
           </div>
         </form>
       </div>

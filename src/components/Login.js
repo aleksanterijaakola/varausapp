@@ -16,6 +16,14 @@ const Login = () => {
   // const { currentUser } = useContext(AuthContext);
   // if you want it to use email you can use currentUser.email
 
+  const signUp = () => {
+    history.push("/register");
+  };
+
+  const forgotPassword = () => {
+    history.push("/forgotpassword");
+  };
+
   const signIn = (e) => {
     e.preventDefault();
 
@@ -33,75 +41,60 @@ const Login = () => {
         <img class="" src={turkuamklogo} alt=""></img>
       </div>
 
-      <div class="w-full max-w-xs container relative top-28">
-        <form
-          class="bg-white bg-opacity-30 shadow-sm rounded px-8 pt-6 pb-8 mb-4"
-          onSubmit={signIn}
-        >
-          <div class="mb-4">
-            <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="username"
-            >
-              Username
-            </label>
+      <div class="bg-grey-lighter min-h-screen flex flex-col">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+          <form
+            class="bg-white bg-opacity-30 px-6 py-8 rounded shadow-md text-black w-full mb-8"
+            onSubmit={signIn}
+          >
+            <h1 class="mb-8 text-3xl text-center">Login</h1>
+
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
-              id="email"
               type="text"
-              required
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            ></input>
-          </div>
-          <div class="mb-6">
-            <label
-              class="block text-gray-700 text-sm font-bold mb-2"
-              for="password"
-            >
-              Password
-            </label>
+            />
+
             <input
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
               type="password"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="password"
               placeholder="Password"
-              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            ></input>
-            {/* <p class="text-red-500 text-xs italic">Please choose a password.</p> */}
+            />
+            <div class="flex justify-center">
+              <button
+                type="submit"
+                class="w-full bg-blue-500 text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+              >
+                Login
+              </button>
+            </div>
+            <div class="w-full border border-gray-900 border-opacity-20 mt-2"></div>
+            <div class="mt-2">
+              <button
+                type="submit"
+                class="w-full border text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+                onClick={signUp}
+              >
+                Register
+              </button>
+            </div>
+            <div class="text-center text-sm text-grey-dark mt-4"></div>
+            <div class="ml-1 text-blue-500">
+              <button class="font-black" onClick={forgotPassword}>
+                Forgot password?
+              </button>
+            </div>
+          </form>
+          <div class="w-6/12 container">
+            <img src={thefirmalogo} alt=""></img>
           </div>
-          <div class="flex items-center justify-between">
-            <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Sign In
-            </button>
-            <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Register
-            </button>
-          </div>
-          <div>
-            <a
-              class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800 relative top-3 container"
-              href="/forgotpassword"
-            >
-              Forgot Password?
-            </a>
-          </div>
-        </form>
-        <p class="text-center text-gray-500 text-xs">
-          &copy;2021 theFIRMA. All rights reserved.
-        </p>
-      </div>
-      <div class="w-6/12 container relative top-40">
-        <img src={thefirmalogo} alt=""></img>
+        </div>
       </div>
     </>
   );

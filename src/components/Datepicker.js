@@ -11,13 +11,13 @@ function Booking() {
       return day !== 0 && day !== 6;
   }
   return (
-    <DatePicker
+    <DatePicker 
       selected={startDate}
       onChange={date => setStartDate(date)}
       format={"dd/MM/yyyy"}
       minDate={new Date()}
       locale="en-GB"
-      placeholderText="Select a date"
+      // placeholderText="Select a date"
       filterDate={isWeekday}
     />
   );

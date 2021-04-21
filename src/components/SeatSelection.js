@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../App.css";
 import Navbar from "../components/Navbar";
-
+import Datepicker from "../components/Datepicker";
+import "../styles/tailwind.css";
 import SeatPicker from "react-seat-picker";
 
 export default class App extends Component {
@@ -112,7 +113,7 @@ export default class App extends Component {
           id: 9,
           number: "3",
         },
-        { id: 10, number: "4", },
+        { id: 10, number: "4" },
         null,
         { id: 11, number: 5 },
         { id: 12, number: 6 },
@@ -137,32 +138,34 @@ export default class App extends Component {
           id: 9,
           number: "3",
         },
-        { id: 10, number: "4", },
+        { id: 10, number: "4" },
         null,
         { id: 11, number: 5 },
         { id: 12, number: 6 },
-      ], 
-      [ 
+      ],
+      [
         { id: 7, number: 1, isReserved: true },
         { id: 8, number: 2 },
         {
           id: 9,
           number: "3",
         },
-        { id: 10, number: "4", },
+        { id: 10, number: "4" },
         null,
         { id: 11, number: 5 },
         { id: 12, number: 6 },
-      ]
+      ],
     ];
     // const { loading } = this.state;
 
     return (
-      
       <div>
         <Navbar />
-        <div></div>
-        <h1>Seat Picker</h1>
+        <div className="pikeri">
+          <h1 class="font-black text-xl">Select date and seat</h1>
+          <Datepicker />
+        </div>
+
         <div style={{ marginTop: "100px", position: "relative", left: "35px" }}>
           <SeatPicker
             addSeatCallback={this.addSeatCallbackContinousCase}

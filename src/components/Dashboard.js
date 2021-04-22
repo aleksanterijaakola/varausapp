@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../App.css";
+// import "../App.css";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 // import turkuamklogo from "../Assets/turku_amk";
@@ -35,51 +35,25 @@ export default function Dashboard() {
       <Navbar />
 
       {datas.map((data, key) => (
-        <div
-          class="bg-white bg-opacity-30 border px-2"
-          // className="divforbookingslots"
-          // style={{ justifyContent: "center" }}
-        >
+        <div class="bg-white bg-opacity-30 border rounded  px-2 container mt-2 relative top-10">
           <div className="individual_booking_container">
             <div className="time_cancel_date_container">
-              <p className="date_container">{startDate.toLocaleDateString()}</p>
-              {/* <p className="container_on_left_of_date"> from </p>
-              <p className="time_container">13:00 to 14:00</p> */}
-              <div
-                // className="cancel_button_main_container"
-                style={{ display: "inline", marginLeft: 30 }}
-              >
-                <div
-                  className="cancel_button_first_child_container"
-                  style={{ display: "inline" }}
-                >
-                  <label
-                    className="cancel_button_text"
-                    style={{ display: "inline", color: "red" }}
-                    onClick={() => handleRemove(data._id)}
-                  >
-                    Cancel
-                  </label>
-                </div>
+              <div>
+                <div className="cancel_button_first_child_container"></div>
               </div>
             </div>
 
-            <div
-              class="grid justify-items: end;"
-              style={{ marginTop: 10, paddingTop: 15 }}
-              className="divsystemname"
-            >
-              <p style={{ textAlign: "left", fontSize: 20, color: "black" }}>
-                &nbsp; Seat {data.computerName}
+            <div class="flex justify-evenly items-center	">
+              <div>Date {startDate.toLocaleDateString()}</div>
+              <div class=" font-semibold">Seat {data.computerName}</div>
+              <div class="mt-5">
                 <button
-                  class="bg-red-500 hover:bg-blue-700 text-white font-bold ml-8 py-1 px-4 rounded relative"
+                  class="bg-red-500 mb-5 hover:bg-blue-700  text-white font-bold py-1 px-4 rounded flex items-center"
                   onClick={() => handleRemove(data._id)}
                 >
                   Delete
                 </button>
-                <br />
-                {/* {data.userEmail} */}
-              </p>
+              </div>
             </div>
           </div>
         </div>

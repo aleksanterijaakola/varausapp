@@ -22,7 +22,7 @@ export default function Dashboard() {
       );
       setDatas(items);
     });
-  },[currentUser]);
+  }, [currentUser]);
 
   function handleRemove(id) {
     let items = datas.filter((booking) => booking._id !== id);
@@ -33,76 +33,57 @@ export default function Dashboard() {
   return (
     <React.Fragment>
       <Navbar />
-      <main style={{ paddingTop: 0 }}>
-        <div>
-          <p style={{ fontSize: 20 }}>Select Date</p>
-          {/* {/<DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            filterDate={(date) => date.getDay() !== 6 && date.getDay() !== 0}
-            className="datepickerclass"
-            id="datepicker"
-            minDate={new Date()}
-          />  */}
-        </div>
 
-        {datas.map((data, key) => (
-          <div
-            className="divforbookingslots"
-            style={{ justifyContent: "center" }}
-          >
-            <div className="individual_booking_container">
-              <div className="time_cancel_date_container">
-                <p className="date_container">
-                  {startDate.toLocaleDateString()}
-                </p>
-                <p className="container_on_left_of_date"> from </p>
-                <p className="time_container">13:00 to 14:00</p>
+      {datas.map((data, key) => (
+        <div
+          class="bg-white bg-opacity-30 border px-2"
+          // className="divforbookingslots"
+          // style={{ justifyContent: "center" }}
+        >
+          <div className="individual_booking_container">
+            <div className="time_cancel_date_container">
+              <p className="date_container">{startDate.toLocaleDateString()}</p>
+              {/* <p className="container_on_left_of_date"> from </p>
+              <p className="time_container">13:00 to 14:00</p> */}
+              <div
+                // className="cancel_button_main_container"
+                style={{ display: "inline", marginLeft: 30 }}
+              >
                 <div
-                  className="cancel_button_main_container"
-                  style={{ display: "inline", marginLeft: 30 }}
+                  className="cancel_button_first_child_container"
+                  style={{ display: "inline" }}
                 >
-                  <div
-                    className="cancel_button_first_child_container"
-                    style={{ display: "inline" }}
+                  <label
+                    className="cancel_button_text"
+                    style={{ display: "inline", color: "red" }}
+                    onClick={() => handleRemove(data._id)}
                   >
-                    <label
-                      className="cancel_button_text"
-                      style={{ display: "inline", color: "red" }}
-                      onClick={() => handleRemove(data._id)}
-                    >
-                      Cancel
-                    </label>
-                  </div>
+                    Cancel
+                  </label>
                 </div>
               </div>
-              <div
-                style={{ marginTop: 10, paddingTop: 15 }}
-                className="divsystemname"
-              >
-                <p style={{ textAlign: "left", fontSize: 20, color: "black" }}>
-                  &nbsp;
-                  <FontAwesomeIcon
-                    icon={faDesktop}
-                    color="black"
-                  /> Computer {data.computerName}
-                  <br />
-                  {data.userEmail}
-                </p>
-              </div>
+            </div>
+
+            <div
+              class="grid justify-items: end;"
+              style={{ marginTop: 10, paddingTop: 15 }}
+              className="divsystemname"
+            >
+              <p style={{ textAlign: "left", fontSize: 20, color: "black" }}>
+                &nbsp; Seat {data.computerName}
+                <button
+                  class="bg-red-500 hover:bg-blue-700 text-white font-bold ml-8 py-1 px-4 rounded relative"
+                  onClick={() => handleRemove(data._id)}
+                >
+                  Delete
+                </button>
+                <br />
+                {/* {data.userEmail} */}
+              </p>
             </div>
           </div>
-        ))}
-        {/* </article> */}
-        <footer>
-          <img
-            className="imgfirma"
-            // src={turkuamklogo}
-            alt=""
-            style={{ height: 50 }}
-          />
-        </footer>
-      </main>
+        </div>
+      ))}
     </React.Fragment>
   );
 }

@@ -42,9 +42,7 @@ const Register = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // console.log(email.current.value)
-    /*if(!repeatEmailValidation(repeatEmail.current.value)){
-      alert("Email does not match") */
+
     if (email.current.value !== repeatEmail.current.value) {
       return setError("Emails do not match");
     }

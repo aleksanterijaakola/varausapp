@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import thefirmalogo from "../Assets/img/turkuamk.png";
 import turkuamklogo from "../Assets/img/thefirma.png";
 import Axios from "axios";
+import { auth } from '../firebase'
 
 const Register = () => {
   const { signup } = useAuth();
@@ -55,6 +56,22 @@ const Register = () => {
       setError("Password needs to be at least 6 characters long");
     }
   }
+
+  const register = (e) => {
+    e.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        // it successfully created a new user with email and password
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
+
+
 
   return (
     <>

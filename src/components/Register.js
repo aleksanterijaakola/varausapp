@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import "../App.css";
 import { useAuth } from "../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+import thefirmalogo from "../Assets/img/turkuamk.png";
+import turkuamklogo from "../Assets/img/thefirma.png";
 import Axios from "axios";
 
 const Register = () => {
@@ -40,9 +42,7 @@ const Register = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // console.log(email.current.value)
-    /*if(!repeatEmailValidation(repeatEmail.current.value)){
-      alert("Email does not match") */
+
     if (email.current.value !== repeatEmail.current.value) {
       return setError("Emails do not match");
     }
@@ -59,6 +59,9 @@ const Register = () => {
   return (
     <>
       <div class="bg-grey-lighter min-h-screen flex flex-col">
+        <div class="w-6/12 container relative top-20">
+          <img class="" src={turkuamklogo} alt=""></img>
+        </div>
         <form
           class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2"
           onSubmit={handleSubmit}
@@ -94,7 +97,7 @@ const Register = () => {
 
             <button
               type="submit"
-              class="w-full bg-blue-500 text-center py-3 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+              class="w-full bg-blue-500 text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
               onClick={() => addUser()}
             >
               Create Account
@@ -103,15 +106,15 @@ const Register = () => {
             <div class="text-center text-sm text-grey-dark mt-4"></div>
             <div class="text-grey-dark ml-1">
               Already have an account?{" "}
-              <button
-                class="text-blue-500"
-                onClick={login}
-              >
+              <button class="text-blue-500" onClick={login}>
                 Log in
               </button>
             </div>
           </div>
         </form>
+        <div class="container w-6/12 relative bottom-20">
+          <img src={thefirmalogo} alt=""></img>
+        </div>
       </div>
     </>
   );

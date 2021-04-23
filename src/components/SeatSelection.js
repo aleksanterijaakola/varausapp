@@ -17,9 +17,9 @@ export default class App extends Component {
     removeCb
   ) => {
     this.setState(
-      {
-        loading: false,
-      },
+      // {
+      //   loading: false,
+      // },
       async () => {
         if (removeCb) {
           await new Promise((resolve) => setTimeout(resolve, 750));
@@ -32,7 +32,7 @@ export default class App extends Component {
         console.log(`Added seat ${number}, row ${row}, id ${id}`);
         const newTooltip = `tooltip for id-${id} added by callback`;
         addCb(row, number, id, newTooltip);
-        this.setState({ loading: false });
+        // this.setState({ loading: false });
       }
     );
   };
@@ -48,7 +48,7 @@ export default class App extends Component {
         // A value of null will reset the tooltip to the original while '' will hide the tooltip
         const newTooltip = ["A", "B", "C"].includes(row) ? null : "";
         removeCb(row, number, newTooltip);
-        this.setState({ loading: false });
+        // this.setState({ loading: false });
       }
     );
   };
@@ -156,7 +156,7 @@ export default class App extends Component {
         { id: 12, number: 6 },
       ],
     ];
-    // const { loading } = this.state;
+    //  const { loading } = this.state;
 
     return (
       <div>
@@ -174,7 +174,7 @@ export default class App extends Component {
             rows={rows}
             alpha
             visible
-            selectedByDefault
+             selectedByDefault
             // loading={loading}
             tooltipProps={{ multiline: true }}
             continuous

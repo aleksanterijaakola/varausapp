@@ -1,5 +1,5 @@
 /*main body styling */
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 body {
   background: linear-gradient(180deg, #f89291 0%, #28d6c0 100%);
   color: black;
@@ -94,9 +94,6 @@ main > article {
   color: #333;
 }
 
-
-
-
 @media (max-width: 750px) {
   .navicon {
     display: block;
@@ -152,10 +149,8 @@ main > article {
   border-color: rgba(248, 146, 145, 0.5) !important;
 }
 
-
-
 /*styling article and the foote(dashboard)*/
- .Headingtop {
+.Headingtop {
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
     0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
     0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
@@ -165,9 +160,7 @@ main > article {
   font-size: 40px;
   color: white;
   margin-bottom: 50px;
-} 
-
-
+}
 
 /*div for individal individual booking*/
 .divforbookingslots > .individual_booking_container {
@@ -189,7 +182,7 @@ main > article {
 }
 
 /*div for individal individual booking,(date container)*/
- .divforbookingslots
+.divforbookingslots
   > .individual_booking_container
   > .time_cancel_date_container
   > .date_container {
@@ -197,7 +190,7 @@ main > article {
   text-align: left;
   border: 0.5px grey solid;
   margin-left: 5px;
-} 
+}
 
 /*div for individal individual booking,(on right of date)*/
 .divforbookingslots
@@ -208,14 +201,14 @@ main > article {
 }
 
 /*div for individal individual booking,( time container)*/
- .divforbookingslots
+.divforbookingslots
   > .individual_booking_container
   > .time_cancel_date_container
   > .time_container {
   display: inline;
   text-align: left;
   border: 0.5px grey solid;
-} 
+}
 
 /*cancel button css, which will cancel the booking*/
 
@@ -293,33 +286,31 @@ main > article {
   margin: auto;
   width: 50%;
   position: relative;
-  top: 80px
+  top: 80px;
 }
 /* ************************** NAVBAR Desktop & Mobile ***********************************/
 
 .navbar {
-  background-color: #060b26; 
+  background-color: #060b26;
   height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
- 
- 
 }
 
 .menu-bars {
   margin-left: 2rem;
   font-size: 2rem;
-  background: none
+  background: none;
 }
 
 .nav-menu {
-  background-color: #060b26; 
+  background-color: #060b26;
   width: 250px;
   height: 100vh;
   display: flex;
   justify-content: center;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: -100%;
   transition: 850ms;
@@ -329,15 +320,13 @@ main > article {
 .nav-menu.active {
   left: 0;
   transition: 350ms;
-  
-
 }
 
 .nav-text {
   display: flex;
   justify-content: start;
   align-items: center;
-  padding: 8 0 8 16; 
+  padding: 8 0 8 16;
   list-style: none;
   height: 60px;
 }
@@ -352,13 +341,10 @@ main > article {
   align-items: centeR;
   padding: 0px 16px;
   border-radius: 4px;
-
 }
 
 .nav-menu-items {
   width: 100%;
- 
-
 }
 
 .navbar-toggle {
@@ -384,9 +370,6 @@ span {
   font-size: 3rem;
 }
 
-
-
-
 /* -----------------------------------------SEAT SELECTION LAYOUT-----------------------------------------------------*/
 /* */
 .seat {
@@ -407,7 +390,6 @@ span {
   margin: 0 auto;
   width: 100%;
   left: 20px;
- 
 }
 
 .blank {
@@ -434,8 +416,8 @@ __row {
 }
 
 .seat-picker > seat seat--enabled seat--north > span {
-    display: none; 
-} 
+  display: none;
+}
 
 .seat.seat--reserved.seat--north {
   background-color: #6b8c9b !important;
@@ -451,16 +433,31 @@ __row {
 } */
 
 .seat-picker__row.seat-picker__row--selected {
-  background-color: transparent;
+  /* color: #d8d8d8 !important; */
+   background: rgba(76, 175, 80, 0)
 }
-/* .seat-picker__row.seat-picker__row--enabled {
-  background-color: red !important
-} */
+
+.te4005377-ada4-47eb-ae0c-6970c3ab00c9 {
+  color: red !important
+}
+
+.tc6c6279c-5e6e-4151-8afd-432cc1fe6f5c {
+  opacity: 0.5 !important;
+
+}
+/ .seat-picker__row.seat-picker__row--enabled {
+  color: red !important
+} 
 
 .seat.seat--enabled.seat-north {
   background-color: transparent;
 }
 
 .loader {
-  display: none !important
+  display: none !important;
 }
+
+.seat.seat--selected.seat--north {
+  background: red;
+}
+

@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./Forgotpassword";
 import BookingInterface from "./BookingInterface";
 import SeatSelection from "./SeatSelection";
+import SeatBooking from "./SeatBooking";
 import Datepicker from "./Datepicker";
 import Alert from "./Alert";
 import { AuthProvider } from "../contexts/AuthContext";
@@ -21,7 +22,7 @@ function App() {
           <PrivateRoute exact path="/testi" component={Datepicker} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
-          <Route path="/seat" component={SeatSelection} />
+          <PrivateRoute exact path="/seat" component={SeatBooking} />
           <Route path="/alert" component={Alert} />
           <Route path="/" component={Login} />
         </Switch>

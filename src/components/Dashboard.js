@@ -44,8 +44,8 @@ export default function Dashboard() {
             </div>
 
             <div class="flex justify-evenly items-center	">
-              <div>Date {startDate.toLocaleDateString()}</div>
-              <div class=" font-semibold">Seat {data.computerName}</div>
+              <div>Date {data.bookingDate}</div>
+              <div class=" font-semibold">Seat {data.seat}</div>
               <div class="mt-5">
                 <button
                   class="bg-red-500 mb-5 hover:bg-blue-700  text-white font-bold py-1 px-4 rounded flex items-center"

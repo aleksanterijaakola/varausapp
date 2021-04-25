@@ -13,7 +13,7 @@ export const SidebarData = [
   },
   {
     title: "Bookings",
-    path: "/reserve",
+    path: "/seat",
     icon: <BsIcons.BsBookmarkPlus />,
     cName: "nav-text",
   },

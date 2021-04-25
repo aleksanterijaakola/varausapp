@@ -1,7 +1,5 @@
 import express from 'express';
 import Booking from '../models/bookings.js';
-import Booking2 from '../models/bookings2.js';
-import Computer from '../models/computers.js';
 import User from '../models/users.js';
 import Day from '../models/day.js';
 import tableData from '../data/computers.js';
@@ -11,46 +9,17 @@ const router = express.Router();
 
 
 //Bookings
-export const insertBooking = async (req, res) => {
-
-    const userEmail = req.body.email;
-    const computerName = req.body.computerName;
-
-    const user = new Booking({ userEmail: userEmail, computerName: computerName });
-    try {
-        await user.save();
-        res.send("inserted new booking")
-    } catch(err) {
-        console.log(err)
-    } 
-};
-
-export const insertComputer = async (req, res) => {
-
-    // const userEmail = req.body.email;
-    const computer = req.body.insertComputer;
-
-    const newComputer = new Computer({ computerName: computer });
-    try {
-        await newComputer.save();
-        res.send("inserted new computer")
-    } catch(err) {
-        console.log(err)
-    } 
-};
 
 
 export const readBooking = async (req, res) => {
 
-    Booking2.find({}, (err, result) => {
+    Booking.find({}, (err, result) => {
         if (err) {
            res.send(err) 
         }
-
         res.send(result);
     })
 };
-
 
 export const deleteBooking = async (req, res) => {
     
@@ -132,8 +101,37 @@ export const editBooking = async (req, res) => {
   } 
 }
 
+export const removeBooking = async (req, res) => {
+
+  const date = req.body.day;
+  const seat = req.body.seat;
+
+  console.log(date);
+  console.log(seat);
+
+
+  const query = { date: date };
+  const updateDocument = {
+    $set: { "tables.$[item].isReserved": false }
+  };
+  const options = {
+    arrayFilters: [{
+      "item.row": seat[0],
+      "item.seat": parseInt(seat[1]),
+    }]
+  };
+
+  try {
+    await Day.updateOne(query, updateDocument, options);
+          res.send("update")
+  } catch(err) {
+      console.log(err)
+  } 
+}
 
 //Users
+
+
 export const register = async (req, res) => {
 
     const email = req.body.email;
@@ -157,7 +155,7 @@ export const userBooking = async (req, res) => {
 
   const seatPlace = row + seat;
 
-  const userbooking = new Booking2({ userEmail: email, bookingDate: date, seat: seatPlace });
+  const userbooking = new Booking({ userEmail: email, bookingDate: date, seat: seatPlace });
   try {
       await userbooking.save();
       res.send("inserted new userbooking")

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../App.css";
 import Axios from 'axios';
-import moment from 'moment';
 
 
 import SeatPicker from "react-seat-picker";

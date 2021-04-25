@@ -24,10 +24,15 @@ export default function Dashboard() {
     });
   }, [currentUser]);
 
-  function handleRemove(id) {
+  function handleEditDay(day, seat) {
+    Axios.put("http://localhost:8080/routes/edit_data", {day: day, seat: seat});
+  }
+
+  function handleRemove(id,day,seat) {
     let items = datas.filter((booking) => booking._id !== id);
     setDatas(items);
     Axios.delete(`http://localhost:8080/routes/delete/${id}`);
+    handleEditDay(day,seat);
   }
 
   return (
@@ -49,7 +54,7 @@ export default function Dashboard() {
               <div class="mt-5">
                 <button
                   class="bg-red-500 mb-5 hover:bg-blue-700  text-white font-bold py-1 px-4 rounded flex items-center"
-                  onClick={() => handleRemove(data._id)}
+                  onClick={() => handleRemove(data._id, data.bookingDate, data.seat)}
                 >
                   Delete
                 </button>

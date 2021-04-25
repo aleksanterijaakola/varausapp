@@ -42,7 +42,7 @@ const SeatBooking = () => {
             for (let i = 0; i <= response.data.length - 1; i++) {
               tempComputersArray.push(response.data[i]);
             }
-            console.log(tempComputersArray);
+            // console.log(tempComputersArray);
             rows = [
               [
                 { id: 1, number: 1, isReserved: tempComputersArray[0] },

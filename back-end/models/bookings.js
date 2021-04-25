@@ -2,15 +2,16 @@ import mongoose from 'mongoose';
 
 const BookingSchema = new mongoose.Schema({
     userEmail: {
-        type: String,
-        required: true,
+        type: String, 
     },
-    computerName: {
+    bookingDate: {
         type: String,
-        required: true,
+    },
+    seat: {
+        type: String,
     },
 })
 
-//
+
 const Booking = mongoose.model("bookingData", BookingSchema);
 export default Booking;

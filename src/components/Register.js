@@ -5,8 +5,6 @@ import { useHistory } from "react-router-dom";
 import thefirmalogo from "../Assets/img/turkuamk.png";
 import turkuamklogo from "../Assets/img/thefirma.png";
 import Axios from "axios";
-import { auth } from "../firebase";
-import Alert from "./Alert";
 
 const Register = () => {
   const { signup } = useAuth();
@@ -15,6 +13,7 @@ const Register = () => {
   const repeatEmail = useRef();
   const password = useRef();
   const [error, setError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   //States for Database
   const [dbEmail, setDbEmail] = useState("");
@@ -42,26 +41,21 @@ const Register = () => {
     history.push("/login");
   };
 
-  const register = (e) => {
+  async function Signup(e) {
     e.preventDefault();
+
     if (email.current.value !== repeatEmail.current.value) {
       return setError("Emails do not match");
     }
 
-    auth
-      .createUserWithEmailAndPassword(
-        email.current.value,
-        password.current.value
-      )
-      .then((auth) => {
-        // it successfully created a new user with email and password
-
-        if (auth) {
-          history.push("/dashboard");
-        }
-      })
-      .catch((error) => alert(error.message));
-  };
+    try {
+      setError("");
+      await signup(email.current.value, password.current.value);
+      history.push("/dashboard");
+    } catch {
+      setPasswordError("Password needs to be at least 6 characters long");
+    }
+  }
 
   return (
     <>
@@ -69,12 +63,10 @@ const Register = () => {
         <div class="w-6/12 container relative top-20">
           <img class="" src={turkuamklogo} alt=""></img>
         </div>
-        <div>
-          <Alert />
-        </div>
+
         <form
           class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2"
-          onSubmit={register}
+          onSubmit={Signup}
         >
           <div class="bg-white bg-opacity-30 px-6 py-8 rounded shadow-md text-black w-full">
             <h1 class="mb-8 text-3xl text-center">Sign up</h1>
@@ -87,6 +79,7 @@ const Register = () => {
               ref={email}
               onChange={(e) => setDbEmail(e.target.value)}
             />
+            <div style={{ color: "red" }}>{error}</div>
 
             <input
               type="text"
@@ -104,7 +97,7 @@ const Register = () => {
               ref={password}
               onChange={(e) => setDbPassword(e.target.value)}
             />
-
+            <div style={{ color: "red" }}>{passwordError}</div>
             <button
               type="submit"
               class="w-full bg-blue-500 text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"

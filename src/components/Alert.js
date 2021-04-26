@@ -1,22 +1,36 @@
 import React from "react";
 
-function Alert() {
+const Alert = ({ color }) => {
+  const [showAlert, setShowAlert] = React.useState(true);
   return (
     <>
-      <div class="bg-red-200 px-6 py-2 mx-2 rounded-md text-lg flex -my-10 items-center mx-auto w-full xl:w-2/4">
-        <svg
-          viewBox="0 0 24 24"
-          class="text-red-600 w-5 h-5 sm:w-5 sm:h-5 mr-3"
+      {showAlert ? (
+        <div
+          className={
+            "text-white px-6 py-4 border-0 rounded relative mb-4 bg-" +
+            color +
+            "-500"
+          }
         >
-          <path
-            fill="currentColor"
-            d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
-          ></path>
-        </svg>
-        <span class="text-red-800"> Your email address is invalid. </span>
-      </div>
+          <span className="inline-block align-middle mr-8">
+            <b className="capitalize"></b> Passwords do not match
+          </span>
+          <button
+            className="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
+            onClick={() => setShowAlert(false)}
+          >
+            <span>×</span>
+          </button>
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+export default function ClosingAlert() {
+  return (
+    <>
+      <Alert color="red" />
     </>
   );
 }
-
-export default Alert;

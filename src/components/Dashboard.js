@@ -1,16 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-// import "../App.css";
 import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from "react-datepicker";
-// import turkuamklogo from "../Assets/turku_amk";
 import Navbar from "../components/Navbar";
 import Axios from "axios";
 import { AuthContext } from "../contexts/AuthContext";
-import { faDesktop } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Dashboard() {
-  const [startDate, setStartDate] = useState(new Date());
   const { currentUser } = useContext(AuthContext);
   const [datas, setDatas] = useState([]);
 
@@ -25,18 +19,21 @@ export default function Dashboard() {
   }, [currentUser]);
 
   function handleEditDay(day, seat) {
-    Axios.put("http://localhost:8080/routes/edit_data", {day: day, seat: seat});
+    Axios.put("http://localhost:8080/routes/edit_data", {
+      day: day,
+      seat: seat,
+    });
   }
 
-  function handleRemove(id,day,seat) {
+  function handleRemove(id, day, seat) {
     let items = datas.filter((booking) => booking._id !== id);
     setDatas(items);
     Axios.delete(`http://localhost:8080/routes/delete/${id}`);
-    handleEditDay(day,seat);
+    handleEditDay(day, seat);
   }
 
   return (
-    <React.Fragment>
+    <>
       <Navbar />
 
       {datas.map((data, key) => (
@@ -54,7 +51,9 @@ export default function Dashboard() {
               <div class="mt-5">
                 <button
                   class="bg-red-500 mb-5 hover:bg-blue-700  text-white font-bold py-1 px-4 rounded flex items-center"
-                  onClick={() => handleRemove(data._id, data.bookingDate, data.seat)}
+                  onClick={() =>
+                    handleRemove(data._id, data.bookingDate, data.seat)
+                  }
                 >
                   Delete
                 </button>
@@ -63,6 +62,6 @@ export default function Dashboard() {
           </div>
         </div>
       ))}
-    </React.Fragment>
+    </>
   );
 }

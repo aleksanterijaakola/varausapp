@@ -6,7 +6,6 @@ import Register from "./Register";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./Forgotpassword";
 import BookingInterface from "./BookingInterface";
-import SeatSelection from "./SeatSelection";
 import SeatBooking from "./SeatBooking";
 import Datepicker from "./Datepicker";
 import Alert from "./Alert";

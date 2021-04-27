@@ -15,11 +15,8 @@ let day = "";
 const SeatBooking = () => {
   const { currentUser } = useContext(AuthContext);
   const [showSeats, setShowSeats] = useState(false);
-  const [computers, setComputers] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [showThanks, setShowThanks] = useState(false);
-
-  const [computersArray, setComputersArray] = useState([]);
 
   let tempComputersArray = [];
 

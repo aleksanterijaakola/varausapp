@@ -5,16 +5,13 @@ import turkuamklogo from "../Assets/img/thefirma.png";
 import { auth } from "../firebase";
 import "../styles/tailwind.css";
 
-// import { AuthContext } from "../contexts/AuthContext";
 
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [error] = useState(""); This is for error.message implementation
+  // const [error] = useState(""); 
 
-  // const { currentUser } = useContext(AuthContext);
-  // if you want it to use email you can use currentUser.email
 
   const signUp = () => {
     history.push("/register");
@@ -34,6 +31,8 @@ const Login = () => {
       })
       .catch((error) => alert(error.message));
   };
+
+
 
   return (
     <>

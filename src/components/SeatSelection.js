@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import "../App.css";
-import Axios from 'axios';
-
+import Axios from "axios";
+import "../styles/tailwind.css";
 
 import SeatPicker from "react-seat-picker";
 
 export default class App extends Component {
   state = {
     loading: false,
-    computer: 'A',
-    row: '',
+    computer: "A",
+    row: "",
     seat: null,
   };
 
@@ -18,18 +18,22 @@ export default class App extends Component {
       email: this.props.userEmail,
       date: this.props.day,
       row: this.state.row,
-      seat: this.state.seat
+      seat: this.state.seat,
     });
   };
 
   clickhandler() {
-    console.log(this.props.day)
-    console.log(this.state.row)
-    console.log(this.state.seat)
-    console.log(this.props.userEmail)
-    
+    console.log(this.props.day);
+    console.log(this.state.row);
+    console.log(this.state.seat);
+    console.log(this.props.userEmail);
+
     this.props.setShowSeats(false);
-    Axios.put("http://localhost:8080/routes/update_data", {day: this.props.day, row: this.state.row, seat: this.state.seat});
+    Axios.put("http://localhost:8080/routes/update_data", {
+      day: this.props.day,
+      row: this.state.row,
+      seat: this.state.seat,
+    });
     this.addBooking();
     this.props.setShowThanks(true);
   }
@@ -60,7 +64,7 @@ export default class App extends Component {
         console.log(`Added seat ${number}, row ${row}, id ${id}`);
         const newTooltip = `tooltip for id-${id} added by callback`;
         addCb(row, number, id, newTooltip);
-        this.setBooking(row, number)
+        this.setBooking(row, number);
         this.setState({ loading: false });
       }
     );
@@ -82,18 +86,13 @@ export default class App extends Component {
     );
   };
 
-
   render() {
-    
     // const { loading } = this.state;
 
     return (
-      <div>
-        <div>
-        </div>
-        <h1>Seat Picker</h1>
-        <div style={{ marginTop: "100px", position: "relative", left: "35px" }}>
-        <SeatPicker
+      <div class="bg-white bg-opacity-50 px-6 py-8 mt-8 rounded shadow-md text-black w-full mb-8">
+        <div class="container font-semibold">
+          <SeatPicker
             addSeatCallback={this.addSeatCallbackContinousCase}
             removeSeatCallback={this.removeSeatCallback}
             maxReservableSeats={1}
@@ -104,11 +103,16 @@ export default class App extends Component {
             // loading={loading}
             tooltipProps={{ multiline: true }}
             continuous
-        />
+          />
         </div>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 mt-5 ml-12 relative left-15 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+          onClick={this.clickhandler.bind(this)}
+        >
+          Confirm booking
+        </button>
         <br />
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit" onClick={this.clickhandler.bind(this)}>Save booking</button>
       </div>
     );
   }

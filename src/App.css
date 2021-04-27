@@ -24,43 +24,6 @@ main > article {
   text-align: center;
 }
 
-/*division between buttons*/
-.buttondivison {
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-  text-align: center;
-}
-
-.headernavtag {
-  background-color: #0082e6;
-  height: 80px;
-  width: 100%;
-}
-
-.navcheckbox {
-  display: none;
-}
-
-.navicon {
-  font-size: 30px;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  line-height: 80px;
-  cursor: pointer;
-  display: none;
-}
-
-.labelfirmaimg {
-  line-height: 80px;
-}
-
-.labelfirmaimg > .firmaimg {
-  height: 50px;
-  padding: 0 70px 0 70px;
-}
-
 .navdivisionlist {
   list-style: none;
   color: white;
@@ -94,43 +57,6 @@ main > article {
   color: #333;
 }
 
-@media (max-width: 750px) {
-  .navicon {
-    display: block;
-    line-height: 80px;
-  }
-  .navdivisionlist {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 80px;
-    left: -100%;
-    transition: all 0.5s;
-    text-align: center;
-    background-color: #6cb4ee;
-  }
-
-  .navdivisionlist > .navdivisionlistitem {
-    display: block;
-    font-size: 30px;
-    border-bottom: 1px solid black;
-  }
-
-  .navdivisionlist > .navdivisionlistitem:hover {
-    color: black;
-  }
-
-  .navdivisionlist > .navdivisionlistitem:active {
-    background-color: none;
-    color: rgb(253, 97, 175);
-    border: none;
-  }
-
-  .activecolor {
-    background-color: transparent;
-  }
-}
-
 .navcheckbox:checked ~ .navdivisionlist {
   left: 0;
 }
@@ -149,19 +75,6 @@ main > article {
   border-color: rgba(248, 146, 145, 0.5) !important;
 }
 
-/*styling article and the foote(dashboard)*/
-.Headingtop {
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
-    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
-    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
-    0 20px 20px rgba(0, 0, 0, 0.15);
-  font-weight: 800;
-  font-size: 40px;
-  color: white;
-  margin-bottom: 50px;
-}
-
 /*div for individal individual booking*/
 .divforbookingslots > .individual_booking_container {
   border: 1px solid black;
@@ -171,14 +84,6 @@ main > article {
   box-shadow: 10px 10px 5px 0px rgba(248, 146, 145, 0.3);
   margin-bottom: 20px;
   padding-top: 5px;
-}
-
-/*div for individal individual booking,(date time and cancel button container)*/
-.divforbookingslots
-  > .individual_booking_container
-  > .time_cancel_date_container {
-  text-align: left;
-  margin-top: 3px;
 }
 
 /*div for individal individual booking,(date container)*/
@@ -279,7 +184,12 @@ main > article {
 /* ************************** DATEPICKER ***********************************/
 
 .react-datepicker__input-container {
-  text-align: center;
+  margin: 0 auto !important;
+}
+
+.react-datepicker-wrapper {
+  margin: 0 auto;
+  text-align: left;
 }
 
 .pikeri {
@@ -371,14 +281,15 @@ span {
 }
 
 .alert-banner {
-  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-      animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 /*Banner close animation*/
 .alert-banner input:checked ~ * {
-  -webkit-animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-      animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;		
+  -webkit-animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 /* -----------------------------------------SEAT SELECTION LAYOUT-----------------------------------------------------*/
@@ -414,6 +325,11 @@ __row {
   width: auto;
 }
 
+span {
+  position: relative;
+  left: -5px;
+}
+
 .seat-picker > *:not(:last-child) {
   margin: 0;
 }
@@ -445,20 +361,19 @@ __row {
 
 .seat-picker__row.seat-picker__row--selected {
   /* color: #d8d8d8 !important; */
-   background: rgba(76, 175, 80, 0)
+  background: rgba(76, 175, 80, 0);
 }
 
 .te4005377-ada4-47eb-ae0c-6970c3ab00c9 {
-  color: red !important
+  color: red !important;
 }
 
 .tc6c6279c-5e6e-4151-8afd-432cc1fe6f5c {
   opacity: 0.5 !important;
-
 }
 / .seat-picker__row.seat-picker__row--enabled {
-  color: red !important
-} 
+  color: red !important;
+}
 
 .seat.seat--enabled.seat-north {
   background-color: transparent;
@@ -471,4 +386,3 @@ __row {
 .seat.seat--selected.seat--north {
   background: red;
 }
-

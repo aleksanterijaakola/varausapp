@@ -46,8 +46,12 @@ export default function Dashboard() {
             </div>
 
             <div class="flex justify-evenly items-center	">
-              <div>Date <p class="font-semibold">{data.bookingDate}</p></div>
-              <div class="">Seat <p class="font-semibold">{data.seat}</p></div>
+              <div>
+                Date <p class="font-semibold">{data.bookingDate}</p>
+              </div>
+              <div class="">
+                Seat <p class="font-semibold">{data.seat}</p>
+              </div>
               <div class="mt-5">
                 <button
                   class="bg-red-500 mb-5 hover:bg-blue-700  text-white font-bold py-1 px-4 rounded flex items-center"

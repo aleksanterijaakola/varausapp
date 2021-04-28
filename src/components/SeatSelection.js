@@ -90,8 +90,8 @@ export default class App extends Component {
     // const { loading } = this.state;
 
     return (
-      <div class="bg-white bg-opacity-50 px-6 py-8 mt-8 rounded shadow-md text-black w-full mb-8">
-        <div class="container font-semibold">
+      <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-3">
+        <div class="bg-white bg-opacity-50 px-6 py-8 mt-8 rounded shadow-md text-black w-full mb-8">
           <SeatPicker
             addSeatCallback={this.addSeatCallbackContinousCase}
             removeSeatCallback={this.removeSeatCallback}
@@ -104,7 +104,6 @@ export default class App extends Component {
             tooltipProps={{ multiline: true }}
             continuous
           />
-        </div>
         <button
           class="bg-blue-500 hover:bg-blue-700 mt-5 ml-12 relative left-15 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
@@ -112,6 +111,7 @@ export default class App extends Component {
         >
           Confirm booking
         </button>
+        </div>
         <br />
       </div>
     );

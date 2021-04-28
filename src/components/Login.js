@@ -34,7 +34,7 @@ const Login = () => {
 
   return (
     <>
-      <div class="container w-56">
+      <div class="container w-56 relative top-20">
         <img src={turkuamklogo} alt=""></img>
       </div>
 

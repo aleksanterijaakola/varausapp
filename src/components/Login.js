@@ -1,17 +1,17 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import thefirmalogo from "../Assets/img/turkuamk.png";
 import turkuamklogo from "../Assets/img/thefirma.png";
+import resizedimg from "../Assets/img/resized_turkuamk.png";
 import { auth } from "../firebase";
 import "../styles/tailwind.css";
+import "../App.css";
 
 
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [error] = useState(""); 
-
+  // const [error] = useState("");
 
   const signUp = () => {
     history.push("/register");
@@ -32,12 +32,10 @@ const Login = () => {
       .catch((error) => alert(error.message));
   };
 
-
-
   return (
     <>
-      <div class="w-6/12 container relative top-20">
-        <img class="" src={turkuamklogo} alt=""></img>
+      <div class="container w-56 relative top-20">
+        <img src={turkuamklogo} alt=""></img>
       </div>
 
       <div class="bg-grey-lighter min-h-screen flex flex-col">
@@ -77,7 +75,7 @@ const Login = () => {
             <div class="mt-2">
               <button
                 type="submit"
-                class="w-full border text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+                class="w-full border border-black border-opacity-50 text-center py-2 rounded text-black hover:bg-green-dark focus:outline-none my-1"
                 onClick={signUp}
               >
                 Register
@@ -90,8 +88,13 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <div class="w-6/12 container">
-            <img src={thefirmalogo} alt=""></img>
+          <div class="container w-56">
+            <img
+              rel="preload"
+              class=""
+              src={resizedimg}
+              alt="Turku AMK logo"
+            ></img>
           </div>
         </div>
       </div>

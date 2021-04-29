@@ -4,7 +4,6 @@ import { auth } from "../firebase";
 import { useHistory } from "react-router-dom";
 import turkuamklogo from "../Assets/img/thefirma.png";
 
-
 function Forgotpassword() {
   const [email, setEmail] = useState("");
   const history = useHistory();
@@ -35,31 +34,32 @@ function Forgotpassword() {
           </p>
         </div>
         <div class="container">
-          <form class="px-6 py-8 rounded text-black" onSubmit={handleSubmit}>
-            <input
-              class="block border border-grey-light w-full p-3 rounded mb-4"
-              id="email"
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></input>
-
-            <div class="flex items-center justify-between mt-2">
+          <form class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 mt-6" onSubmit={handleSubmit}>
+            <div class="bg-white bg-opacity-30 px-6 py-8 rounded shadow-md text-black w-full">
+              <input
+                class="block border border-grey-light w-full p-3 rounded mb-4"
+                id="email"
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              ></input>
               <button
                 class="w-full bg-blue-500 text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
                 type="submit"
               >
                 Reset password
               </button>
+              <div class="relative top-3">
+                {" "}
+                Not registered?{" "}
+                <button class="text-blue-500 font-bold" onClick={signUp}>
+                  Sign up
+                </button>
+              </div>
             </div>
-            <div>
-              {" "}
-              Not registered?{" "}
-              <button class="text-blue-500 font-bold" onClick={signUp}>
-                Sign up
-              </button>
-            </div>
+
+            <div class="flex items-center justify-between mt-2"></div>
           </form>
         </div>
       </div>

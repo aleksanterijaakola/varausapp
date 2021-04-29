@@ -1,5 +1,4 @@
 /*main body styling */
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 body {
   background: linear-gradient(180deg, #f89291 0%, #28d6c0 100%);
   color: black;
@@ -11,7 +10,13 @@ html,
 root {
   height: 100%;
 }
-
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  font-display: swap;
+}
 main {
   margin-right: auto;
   margin-left: auto;
@@ -280,17 +285,7 @@ span {
   font-size: 3rem;
 }
 
-.alert-banner {
-  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
 
-/*Banner close animation*/
-.alert-banner input:checked ~ * {
-  -webkit-animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
-    both;
-  animation: slide-out-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-}
 
 /* -----------------------------------------SEAT SELECTION LAYOUT-----------------------------------------------------*/
 /* */

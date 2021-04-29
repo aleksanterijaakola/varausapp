@@ -75,7 +75,7 @@ const Login = () => {
             <div class="mt-2">
               <button
                 type="submit"
-                class="w-full border text-center py-2 rounded text-white hover:bg-green-dark focus:outline-none my-1"
+                class="w-full border border-black border-opacity-50 text-center py-2 rounded text-black hover:bg-green-dark focus:outline-none my-1"
                 onClick={signUp}
               >
                 Register

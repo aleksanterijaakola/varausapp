@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
+// import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import * as HiIcons from "react-icons/hi";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import "../App.css";
@@ -15,7 +16,7 @@ function Navbar() {
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar">
           <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar} />
+            <HiIcons.HiOutlineMenuAlt3 onClick={showSidebar} />
           </Link>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>

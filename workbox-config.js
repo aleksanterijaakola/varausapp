@@ -3,7 +3,7 @@ module.exports = {
 	globPatterns: [
 	  '**/*.{html,json,js,css}'
 	],
-	swDest: 'build/sw.js',
+	swDest: 'sw.js',
   
 	// Define runtime caching rules.
 	runtimeCaching: [{
@@ -15,7 +15,8 @@ module.exports = {
   
 	  options: {
 		// Use a custom cache name.
-		cacheName: 'images',
+		cacheName: 'assets',
+		
   
 		// Only cache 10 images.
 		expiration: {

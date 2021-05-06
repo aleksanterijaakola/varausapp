@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import thefirmalogo from "../Assets/img/turkuamk.png";
 import turkuamklogo from "../Assets/img/thefirma.png";
 import Axios from "axios";
-import Alert from "./Alert";
+// import Alert from "./Alert";
 
 const Register = () => {
   const { signup } = useAuth();
@@ -14,7 +14,7 @@ const Register = () => {
   const repeatEmail = useRef();
   const password = useRef();
   const [error, setError] = useState("");
-  const [, errori] = useState("");
+  // const [, errori] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
   //States for Database

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import "./App.css";
-import './styles/tailwind.css'
-import App from './components/App'
+import "./styles/tailwind.css";
+import App from "./components/App";
 //import "bootstrap/dist/css/bootstrap.css";
-
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,3 +17,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
 
+serviceWorkerRegistration.register();

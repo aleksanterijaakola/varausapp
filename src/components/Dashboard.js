@@ -37,7 +37,7 @@ export default function Dashboard() {
       <Navbar />
 
       {datas.map((data, key) => (
-        <div class="bg-white bg-opacity-30 border rounded  px-2 container mt-2 relative top-10">
+        <div key={key} class="bg-white bg-opacity-30 border rounded  px-2 container mt-2 relative top-10">
           <div className="individual_booking_container">
             <div className="time_cancel_date_container">
               <div>

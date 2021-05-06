@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import SeatSelection from "./SeatSelection";
 import moment from "moment";
 import Axios from "axios";
@@ -18,28 +18,16 @@ const SeatBooking = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [showThanks, setShowThanks] = useState(false);
 
-  let tempComputersArray = [];
 
-  useEffect(() => {
-    console.log(currentUser.email);
-    if (selectedDate) {
-      setShowThanks(false);
-      setShowSeats(false);
-      handleSetDay();
-    } else {
-      return;
-    }
-  }, [selectedDate]);
-
-  const handleSetDay = () => {
+  const handleSetDay = useCallback(() => {
     day = moment(selectedDate).format("DD.MM.YYYY");
     Axios.post("http://localhost:8080/routes/new_data", {
       date: day,
     }).then((response) => {
+      let tempComputersArray = [];
       for (let i = 0; i <= response.data.length - 1; i++) {
         tempComputersArray.push(response.data[i]);
       }
-      // console.log(tempComputersArray);
       rows = [
         [
           { id: 1, number: 1, isReserved: tempComputersArray[0] },
@@ -116,7 +104,18 @@ const SeatBooking = () => {
       ];
       setShowSeats(true);
     });
-  };
+  }, [selectedDate],
+  );
+
+  useEffect(() => {
+    if (selectedDate) {
+      setShowThanks(false);
+      setShowSeats(false);
+      handleSetDay();
+    } else {
+      return;
+    };
+  }, [selectedDate, handleSetDay]);
 
   return (
     <div>

@@ -8,6 +8,7 @@ import ForgotPassword from "./Forgotpassword";
 import BookingInterface from "./BookingInterface";
 import SeatBooking from "./SeatBooking";
 import Datepicker from "./Datepicker";
+import BottomNav from './BottomNav';
 import Alert from "./Alert";
 import { AuthProvider } from "../contexts/AuthContext";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/forgotpassword" component={ForgotPassword} />
           <PrivateRoute exact path="/seat" component={SeatBooking} />
           <Route path="/alert" component={Alert} />
+          <Route exact path="/nav" component={BottomNav}/>
           <Route path="/" component={Login} />
         </Switch>
       </AuthProvider>

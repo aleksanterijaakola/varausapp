@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import Navbar from "../components/Navbar";
+import BottomNav from "../components/BottomNav";
 import Axios from "axios";
 import { AuthContext } from "../contexts/AuthContext";
 
@@ -34,10 +35,13 @@ export default function Dashboard() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
 
       {datas.map((data, key) => (
-        <div key={key} class="bg-white bg-opacity-30 border rounded  px-2 container mt-2 relative top-10">
+        <div
+          key={key}
+          class="bg-white bg-opacity-30 border rounded  px-2 container mt-2 relative top-10"
+        >
           <div className="individual_booking_container">
             <div className="time_cancel_date_container">
               <div>
@@ -66,6 +70,7 @@ export default function Dashboard() {
           </div>
         </div>
       ))}
+      <BottomNav />
     </>
   );
 }

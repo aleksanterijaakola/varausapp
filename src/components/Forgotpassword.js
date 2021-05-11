@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../styles/tailwind.css";
 import { auth } from "../firebase";
 import { useHistory } from "react-router-dom";
-import turkuamklogo from "../Assets/img/thefirma.png";
+import turkuamklogo from "../images/turkuamk.png"
+
 
 function Forgotpassword() {
   const [email, setEmail] = useState("");

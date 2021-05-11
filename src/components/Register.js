@@ -2,8 +2,10 @@ import React, { useRef, useState } from "react";
 import "../App.css";
 import { useAuth } from "../contexts/AuthContext";
 import { useHistory } from "react-router-dom";
-import thefirmalogo from "../Assets/img/turkuamk.png";
-import turkuamklogo from "../Assets/img/thefirma.png";
+import turkuamklogo from "../images/turkuamk.png"
+// import resizedimg from "../images/resized_turkuamk.png"
+import thefirmalogo from "../images/thefirma.png"
+
 import Axios from "axios";
 // import Alert from "./Alert";
 

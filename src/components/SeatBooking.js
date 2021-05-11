@@ -5,7 +5,7 @@ import Axios from "axios";
 import DatePicker from "../../node_modules/react-datepicker";
 import "react-datepicker/dist/react-datepicker";
 import { AuthContext } from "../contexts/AuthContext";
-import Navbar from "../components/Navbar";
+import BottomNav from "./BottomNav";
 import "../styles/tailwind.css";
 import "../App.css";
 
@@ -17,7 +17,6 @@ const SeatBooking = () => {
   const [showSeats, setShowSeats] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
   const [showThanks, setShowThanks] = useState(false);
-
 
   const handleSetDay = useCallback(() => {
     day = moment(selectedDate).format("DD.MM.YYYY");
@@ -104,8 +103,7 @@ const SeatBooking = () => {
       ];
       setShowSeats(true);
     });
-  }, [selectedDate],
-  );
+  }, [selectedDate]);
 
   useEffect(() => {
     if (selectedDate) {
@@ -114,12 +112,12 @@ const SeatBooking = () => {
       handleSetDay();
     } else {
       return;
-    };
+    }
   }, [selectedDate, handleSetDay]);
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div class="flex items-center flex-col mt-6">
         <div class="pt-2 text-lg">Select date and seat</div>
         <div>
@@ -144,6 +142,7 @@ const SeatBooking = () => {
           userEmail={currentUser.email}
         />
       )}
+      <BottomNav />
     </div>
   );
 };

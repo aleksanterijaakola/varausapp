@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import { useHistory } from "react-router-dom";
-import turkuamklogo from "../Assets/img/thefirma.png";
-import resizedimg from "../Assets/img/resized_turkuamk.png";
+import turkuamklogo from "../images/turkuamk.png"
+import resizedimg from "../images/resized_turkuamk.png"
 import { auth } from "../firebase";
 import "../styles/tailwind.css";
 import "../App.css";

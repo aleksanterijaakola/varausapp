@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import Navbar from "../components/Navbar";
 import BottomNav from "../components/BottomNav";
 import Axios from "axios";
 import { AuthContext } from "../contexts/AuthContext";

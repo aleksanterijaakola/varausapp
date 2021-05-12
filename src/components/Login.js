@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { useHistory } from "react-router-dom";
-import turkuamklogo from "../images/turkuamk.png"
+import thefirma from "../images/thefirma.png"
 import resizedimg from "../images/resized_turkuamk.png"
 import { auth } from "../firebase";
 import "../styles/tailwind.css";
@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <>
       <div class="container w-56 relative top-20">
-        <img src={turkuamklogo} alt=""></img>
+        <img src={thefirma} alt=""></img>
       </div>
 
       <div class="bg-grey-lighter min-h-screen flex flex-col">

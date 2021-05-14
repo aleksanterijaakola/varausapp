@@ -12,7 +12,7 @@ app.use(cors());
 app.use('/routes', appRoutes);
 
 
-mongoose.connect("mongodb+srv://admin:pAZTf297Wg4rxVd@cluster0.m3tzc.mongodb.net/booking_app", {
+mongoose.connect("*******************************", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
